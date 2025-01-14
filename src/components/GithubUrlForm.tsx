@@ -78,6 +78,8 @@ export function GithubUrlForm() {
                             • github.com/username/repo
                             <br/>
                             • github.com/username/repo/blob/main/file.md
+                            <br/>
+                            • https://github.com/username/repo/blob/main/file.md
                         </p>
                     </div>
                     <button
