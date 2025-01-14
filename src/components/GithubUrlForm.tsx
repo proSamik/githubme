@@ -41,7 +41,7 @@ export function GithubUrlForm() {
     return (
         <div className="min-h-screen flex items-center justify-center p-4">
             <div className="max-w-2xl w-full">
-                <h1 className="text-3xl font-bold mb-8 text-center">GitHub Me- Markdown Viewer</h1>
+                <h1 className="text-3xl font-bold mb-8 text-center">GitHub Me- A Stylish Markdown Viewer</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label
