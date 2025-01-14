@@ -5,13 +5,15 @@ import ArticleHeader from "@/components/ArticleHeader";
 import {ArticleFooter} from "@/components/ArticleFooter";
 import Link from "next/link";
 
+// src/app/[...path]/page.tsx
 interface Props {
-    params: {
+    params: Promise<{
         path: string[];
-    };
+    }>;
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params: paramsPromise }: Props) {
+    const params = await paramsPromise;
     const { path } = params;
 
     // Handle the GitHub URL construction
@@ -41,7 +43,6 @@ export default async function Page({ params }: Props) {
             </>
         );
     } catch (error) {
-        console.error(error);
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center text-red-600">
