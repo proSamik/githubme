@@ -112,6 +112,9 @@ export default {
           accent: '#5865f2',
         },
       },
+      aspectRatio: {
+        'video': '16 / 9',
+      },
     },
   },
   plugins: [

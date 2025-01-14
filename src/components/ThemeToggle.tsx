@@ -1,58 +1,32 @@
-// src/components/ThemeToggle.tsx
+// components/ThemeToggle.tsx
 'use client';
-import React, { useState, useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
 
-const ThemeToggle: React.FC = () => {
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+export default function ThemeToggle() {
+    const [mounted, setMounted] = useState(false);
+    const { theme, setTheme } = useTheme();
 
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-        // Check system preference if no saved theme
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    // When mounted on client, now we can show the UI
+    useEffect(() => setMounted(true), []);
 
-        setTheme(initialTheme);
-        applyTheme(initialTheme);
-    }, []);
-
-    const applyTheme = (selectedTheme: 'light' | 'dark') => {
-        if (selectedTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.documentElement.style.colorScheme = 'dark';
-        } else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.style.colorScheme = 'light';
-        }
-        localStorage.setItem('theme', selectedTheme);
-
-        // Dispatch custom event for theme change
-        window.dispatchEvent(
-            new CustomEvent('themeChange', {
-                detail: { theme: selectedTheme },
-            })
-        );
-    };
-
-    const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        applyTheme(newTheme);
-    };
+    if (!mounted) {
+        return null;
+    }
 
     return (
         <button
-            onClick={toggleTheme}
-            className="fixed top-4 right-4 p-2 rounded-full bg-zinc-100 dark:bg-dark-background-soft hover:bg-zinc-200 dark:hover:bg-dark-background-hover transition-colors"
-            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="fixed bottom-5 right-5 p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg border border-amber-200 dark:border-amber-700 hover:bg-amber-50 dark:hover:bg-gray-700 transition-all"
+            aria-label="Toggle theme"
         >
-            {theme === 'light' ? (
-                <Moon className="h-5 w-5 text-zinc-800" />
+            {theme === 'dark' ? (
+                <Sun className="w-6 h-6 text-amber-500" />
             ) : (
-                <Sun className="h-5 w-5 text-zinc-200" />
+                <Moon className="w-6 h-6 text-amber-500" />
             )}
         </button>
     );
-};
-
-export default ThemeToggle;
+}

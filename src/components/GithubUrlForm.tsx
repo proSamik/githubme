@@ -1,4 +1,3 @@
-// components/GithubUrlForm.tsx
 'use client';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -29,6 +28,7 @@ export function GithubUrlForm() {
 
             if (pathSegments.length < 2) {
                 setError('Please enter a valid GitHub repository path (username/repo)');
+                setIsFetching(false);
                 return;
             }
 
@@ -37,18 +37,24 @@ export function GithubUrlForm() {
             router.push(newPath);
         } catch {
             setError('Please enter a valid GitHub repository path\nExample: username/repo or github.com/username/repo');
+            setIsFetching(false);
         }
     };
 
     return (
+        // Gradient background container
         <div className="min-h-screen flex items-center justify-center p-4">
-            <div className="w-full max-w-md">
-                <h1 className="text-3xl font-bold mb-8 text-center">GitHub Me- A Stylish Markdown Viewer</h1>
+            {/* Card container with golden border */}
+            <div className="w-full max-w-md bg-white rounded-xl shadow-xl p-8 border border-amber-200">
+                {/* Gradient title */}
+                <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-amber-600 to-yellow-500 text-transparent bg-clip-text">
+                    GitHub Me- A Stylish Markdown Viewer
+                </h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label
                             htmlFor="github-url"
-                            className="block text-sm font-medium mb-2"
+                            className="block text-sm font-medium mb-2 text-amber-800"
                         >
                             Enter GitHub Repository Path
                         </label>
@@ -60,9 +66,9 @@ export function GithubUrlForm() {
                                 setUrl(e.target.value);
                                 setError(null);
                             }}
-                            placeholder="username/repo or github.com/username/repo"
-                            className={`w-full px-4 py-2 border rounded-md ${
-                                error ? 'border-red-500' : 'border-gray-300'
+                            placeholder="github.com/username/filepath"
+                            className={`w-full px-4 py-2 rounded-md border-2 focus:ring-2 focus:ring-amber-200 focus:border-amber-300 transition-all ${
+                                error ? 'border-red-500' : 'border-amber-200'
                             }`}
                         />
                         {error && (
@@ -70,7 +76,7 @@ export function GithubUrlForm() {
                                 {error}
                             </p>
                         )}
-                        <p className="mt-2 text-sm text-gray-600">
+                        <p className="mt-2 text-sm text-amber-700">
                             Examples:
                             <br/>
                             • username/repo
@@ -78,14 +84,16 @@ export function GithubUrlForm() {
                             • github.com/username/repo
                             <br/>
                             • github.com/username/repo/blob/main/file.md
+                            <br/>
+                            • https://github.com/username/repo/blob/main/file.md
                         </p>
                     </div>
                     <button
                         type="submit"
-                        className={`w-full py-2 px-4 rounded-md transition-colors ${
+                        className={`w-full py-2 px-4 rounded-md transition-all ${
                             isFetching
-                                ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-blue-500 text-white hover:bg-blue-600'
+                                ? 'bg-amber-300 cursor-not-allowed'
+                                : 'bg-gradient-to-r from-amber-500 to-yellow-500 text-white hover:from-amber-600 hover:to-yellow-600 shadow-md hover:shadow-lg'
                         }`}
                         disabled={isFetching}
                     >

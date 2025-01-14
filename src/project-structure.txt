@@ -1,0 +1,25 @@
+.
+├── app
+│   ├── [...path]
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components
+│   ├── ArticleContent.tsx
+│   ├── ArticleFooter.tsx
+│   ├── ArticleHeader.tsx
+│   ├── ErrorBoundary.tsx
+│   ├── GithubUrlForm.tsx
+│   ├── SocialShareButtons.tsx
+│   └── ThemeToggle.tsx
+├── config
+│   └── api.ts
+├── lib
+│   └── api.ts
+├── project-structure.txt
+└── types
+    └── index.ts
+
+7 directories, 16 files

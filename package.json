@@ -11,19 +11,25 @@
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.16",
+    "character-entities-legacy": "3.0.0",
+    "html-to-image": "^1.11.11",
     "lucide-react": "^0.471.1",
+    "mermaid": "^11.4.1",
     "next": "^15.1.4",
+    "next-themes": "^0.4.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-markdown": "^9.0.3",
-    "react-syntax-highlighter": "^15.6.1"
+    "react-syntax-highlighter": "^15.6.1",
+    "refractor": "4.8.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "postcss": "^8",
