@@ -17,7 +17,7 @@ export const ArticleHeader: React.FC<ArticleHeaderProps> = ({
     const githubProfileUrl = `https://github.com/${metadata.author}`;
 
     const AuthorInfo = () => (
-        <div className="flex items-center space-x-2 text-gray-700 dark:text-gray-300">
+        <div className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 mt-7">
             <a
                 href={githubProfileUrl}
                 target="_blank"
