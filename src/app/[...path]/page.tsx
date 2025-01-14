@@ -42,7 +42,7 @@ export default async function Page({ params: paramsPromise }: Props) {
                 <ArticleFooter metadata={data.metadata} />
             </>
         );
-    } catch (error) {
+    } catch{
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center text-red-600">
