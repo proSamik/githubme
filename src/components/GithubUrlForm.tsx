@@ -1,4 +1,3 @@
-// components/GithubUrlForm.tsx
 'use client';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -29,6 +28,7 @@ export function GithubUrlForm() {
 
             if (pathSegments.length < 2) {
                 setError('Please enter a valid GitHub repository path (username/repo)');
+                setIsFetching(false);
                 return;
             }
 
@@ -37,12 +37,13 @@ export function GithubUrlForm() {
             router.push(newPath);
         } catch {
             setError('Please enter a valid GitHub repository path\nExample: username/repo or github.com/username/repo');
+            setIsFetching(false);
         }
     };
 
     return (
         // Gradient background container
-        <div className="min-h-screen flex items-center justify-center p-4 ">
+        <div className="min-h-screen flex items-center justify-center p-4">
             {/* Card container with golden border */}
             <div className="w-full max-w-md bg-white rounded-xl shadow-xl p-8 border border-amber-200">
                 {/* Gradient title */}
