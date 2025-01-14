@@ -6,11 +6,13 @@ import { useRouter } from 'next/navigation';
 export function GithubUrlForm() {
     const [url, setUrl] = useState('');
     const [error, setError] = useState<string | null>(null);
+    const [isFetching, setIsFetching] = useState(false);
     const router = useRouter();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setError(null);
+        setIsFetching(true);
 
         let pathSegments: string[];
 
@@ -33,14 +35,14 @@ export function GithubUrlForm() {
             // Construct new path
             const newPath = `/${pathSegments.join('/')}`;
             router.push(newPath);
-        } catch {  // Removed unused 'error' parameter
+        } catch {
             setError('Please enter a valid GitHub repository path\nExample: username/repo or github.com/username/repo');
         }
     };
 
     return (
         <div className="min-h-screen flex items-center justify-center p-4">
-            <div className="max-w-2xl w-full">
+            <div className="w-full max-w-md">
                 <h1 className="text-3xl font-bold mb-8 text-center">GitHub Me- A Stylish Markdown Viewer</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
@@ -70,19 +72,24 @@ export function GithubUrlForm() {
                         )}
                         <p className="mt-2 text-sm text-gray-600">
                             Examples:
-                            <br />
+                            <br/>
                             • username/repo
-                            <br />
+                            <br/>
                             • github.com/username/repo
-                            <br />
+                            <br/>
                             • github.com/username/repo/blob/main/file.md
                         </p>
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
+                        className={`w-full py-2 px-4 rounded-md transition-colors ${
+                            isFetching
+                                ? 'bg-gray-400 cursor-not-allowed'
+                                : 'bg-blue-500 text-white hover:bg-blue-600'
+                        }`}
+                        disabled={isFetching}
                     >
-                        View Content
+                        {isFetching ? 'Fetching...' : 'View Content'}
                     </button>
                 </form>
             </div>
