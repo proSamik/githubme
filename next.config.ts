@@ -51,18 +51,6 @@ const nextConfig: NextConfig = {
     },
     reactStrictMode: false,
     productionBrowserSourceMaps: true,
-    // Add webpack configuration for JSON handling
-    webpack: (config, { isServer }) => {
-        // Add JSON loader
-        config.module.rules.push({
-            test: /\.json$/,
-            type: 'json',
-        });
-
-        return config;
-    },
-    // Add transpilePackages for react-syntax-highlighter
-    transpilePackages: ['react-syntax-highlighter'],
 };
 
 export default nextConfig;
