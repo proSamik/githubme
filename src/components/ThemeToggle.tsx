@@ -5,18 +5,22 @@ import { Moon, Sun } from 'lucide-react';
 
 const ThemeToggle: React.FC = () => {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        // Only run on client-side
         const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-        // Check system preference if no saved theme
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
         setTheme(initialTheme);
         applyTheme(initialTheme);
+        setMounted(true);
     }, []);
 
     const applyTheme = (selectedTheme: 'light' | 'dark') => {
+        if (typeof window === 'undefined') return;
+
         if (selectedTheme === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.style.colorScheme = 'dark';
@@ -26,7 +30,6 @@ const ThemeToggle: React.FC = () => {
         }
         localStorage.setItem('theme', selectedTheme);
 
-        // Dispatch custom event for theme change
         window.dispatchEvent(
             new CustomEvent('themeChange', {
                 detail: { theme: selectedTheme },
@@ -39,6 +42,11 @@ const ThemeToggle: React.FC = () => {
         setTheme(newTheme);
         applyTheme(newTheme);
     };
+
+    // Prevent rendering until client-side
+    if (!mounted) {
+        return null;
+    }
 
     return (
         <button
