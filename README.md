@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitHub Me- A Stylish Markdown Viewer
 
-## Getting Started
+A modern web application that renders GitHub markdown files with a clean, responsive interface. Built with Next.js 13+ and TypeScript, featuring both light and dark modes.
 
-First, run the development server:
+## Features
 
+- 🎯 Render any GitHub markdown file directly using its URL
+- 🌓 Light/Dark mode support
+- 📱 Responsive design
+- 🔗 Social Sharing buttons
+- 📝 Clean typography with proper code highlighting
+- 📊 Responsive tables with horizontal scrolling
+- 🖼️ Centered image display
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js 20+ 
+- npm/yarn/pnpm
+- [Backend Server](https://github.com/proSamik/prosamik-golang-server) running 
+
+## Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:proSamik/githubme.git
+cd githubme
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env.local` file in the root directory:
+```env
+NEXT_PUBLIC_BASE_URL=http://localhost:10000  # Your backend server URL
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+The application will be available at `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Visit the homepage
+2. Enter a GitHub URL in any of these formats:
+    - `github.com/username/repo`
+    - `https://github.com/username/repo`
+    - `username/repo`
+    - Full path to specific file: `github.com/username/repo/blob/main/path/to/file.md`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. The application will render the markdown content with proper styling
 
-## Deploy on Vercel
+## Development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project structure:
+```
+src/
+├── app/
+│   ├── layout.tsx       # Root layout with theme support
+│   └── page.tsx         # Main page with URL input
+├── components/
+│   ├── ArticleContent.tsx    # Markdown renderer
+│   ├── ArticleFooter.tsx     # Article footer
+│   ├── ArticleHeader.tsx     # Article header with author info
+│   ├── ErrorBoundary.tsx     # Error handling
+│   ├── GithubUrlForm.tsx     # URL input form
+│   ├── SocialShareButtons.tsx # Social sharing
+│   └── ThemeToggle.tsx       # Light/Dark mode toggle
+├── config/
+│   └── api.ts           # API configuration
+├── lib/
+│   └── api.ts           # API utilities
+└── types/
+    └── index.ts         # TypeScript interfaces
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Backend Server
+
+This project requires the [prosamik-golang-server](https://github.com/proSamik/prosamik-golang-server) to be running. Follow the installation instructions in the backend repository to set it up.
+
+## Technologies Used
+
+- Next.js 15+
+- TypeScript
+- Tailwind CSS
+- @tailwindcss/typography
+- lucide-react
+- react-icons
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details
+
+
