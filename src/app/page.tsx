@@ -1,15 +1,18 @@
-// app/page.tsx
+// src/app/page.tsx
 import { ArticleHeader } from '@/components/ArticleHeader';
 import { ArticleContent } from '@/components/ArticleContent';
 import { ArticleFooter } from '@/components/ArticleFooter';
 import { fetchContent } from '@/lib/api';
 import { GithubUrlForm } from '@/components/GithubUrlForm';
 
-export default async function Page({
-                                       searchParams: { url },
-                                   }: {
-    searchParams: { url?: string };
-}) {
+interface PageProps {
+    searchParams: Promise<{ url?: string }>;
+}
+
+export default async function Page({ searchParams: searchParamsPromise }: PageProps) {
+    const searchParams = await searchParamsPromise;
+    const { url } = searchParams;
+
     if (!url) {
         return <GithubUrlForm />;
     }
@@ -26,8 +29,7 @@ export default async function Page({
                 <ArticleFooter metadata={data.metadata} />
             </>
         );
-    } catch (error) {
-        console.log(error);
+    } catch {
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center text-red-600">
