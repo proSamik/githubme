@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import ThemeToggle from '@/components/ThemeToggle';
+import ThemeToggle from '@/components/layout/ThemeToggle';
 
 export default function Navigation() {
     return (
@@ -10,7 +10,7 @@ export default function Navigation() {
                 className="flex w-full max-w-4xl px-3 border-b border-l border-r border-amber-200 dark:border-amber-700 rounded-b-lg">
                 <div className="flex justify-between items-center h-16 w-full">
                     <Link
-                        href="/"
+                        href="/public"
                         className="relative w-16 h-16"
                     >
                         <Image
@@ -23,7 +23,7 @@ export default function Navigation() {
                     </Link>
                     <div className="flex items-center space-x-6">
                         <div className="flex items-center space-x-4">
-                            <Link href="/"
+                            <Link href="/public"
                                   className="text-amber-800 dark:text-amber-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
                                 Home
                             </Link>
