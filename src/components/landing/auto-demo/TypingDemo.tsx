@@ -10,7 +10,7 @@ export function TypingDemo() {
     const demoUrls = [
         'github.com/username/repo',
         'github.com/username/repo/blob/main/file.md',
-        'https://github.com/username/repo/blob/main/file.md'
+        'github.com/username/repo/blob/main/dir/file.md'
     ];
 
     useEffect(() => {
