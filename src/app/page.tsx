@@ -1,5 +1,4 @@
 // src/app/page.tsx
-
 import { ArticleHeader } from '@/components/article/ArticleHeader';
 import { ArticleContent } from '@/components/article/ArticleContent';
 import { ArticleFooter } from '@/components/article/ArticleFooter';
