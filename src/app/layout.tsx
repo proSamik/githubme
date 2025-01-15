@@ -1,8 +1,8 @@
 // src/app/layout.tsx
 import { Inter } from 'next/font/google';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import { ErrorBoundary } from '@/components/layout/ErrorBoundary';
+import Navigation from '@/components/layout/Navigation';
+import Footer from '@/components/layout/Footer';
 import './globals.css';
 import React from "react";
 import { Providers } from './providers';

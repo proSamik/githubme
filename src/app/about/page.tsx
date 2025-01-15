@@ -1,6 +1,6 @@
 // app/about/page.tsx
 import React from 'react';
-import AboutContent from '@/components/AboutContent';
+import AboutContent from '@/components/about/AboutContent';
 
 export default function AboutPage() {
     return (

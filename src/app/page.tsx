@@ -1,7 +1,7 @@
 // src/app/page.tsx
-import { ArticleHeader } from '@/components/ArticleHeader';
-import { ArticleContent } from '@/components/ArticleContent';
-import { ArticleFooter } from '@/components/ArticleFooter';
+import { ArticleHeader } from '@/components/article/ArticleHeader';
+import { ArticleContent } from '@/components/article/ArticleContent';
+import { ArticleFooter } from '@/components/article/ArticleFooter';
 import { fetchContent } from '@/lib/api';
 import { GithubUrlForm } from '@/components/GithubUrlForm';
 

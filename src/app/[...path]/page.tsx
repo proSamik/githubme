@@ -1,9 +1,9 @@
 // app/[...path]/page.tsx
 import {fetchContent} from "@/lib/api";
-import {ArticleContent} from "@/components/ArticleContent";
-import ArticleHeader from "@/components/ArticleHeader";
-import {ArticleFooter} from "@/components/ArticleFooter";
-import { ErrorDisplay } from "@/components/ErrorDisplay";
+import {ArticleContent} from "@/components/article/ArticleContent";
+import ArticleHeader from "@/components/article/ArticleHeader";
+import {ArticleFooter} from "@/components/article/ArticleFooter";
+import { ErrorDisplay } from "@/components/layout/ErrorDisplay";
 
 interface Props {
     params: Promise<{
