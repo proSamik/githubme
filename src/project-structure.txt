@@ -5,21 +5,39 @@
 │   ├── favicon.ico
 │   ├── globals.css
 │   ├── layout.tsx
-│   └── page.tsx
+│   ├── page.tsx
+│   └── providers.tsx
 ├── components
 │   ├── ArticleContent.tsx
 │   ├── ArticleFooter.tsx
 │   ├── ArticleHeader.tsx
+│   ├── CodeBlockComponents.tsx
+│   ├── CodeBlockRendrer.tsx
+│   ├── CodeBlockSyntaxHighlighter.tsx
 │   ├── ErrorBoundary.tsx
+│   ├── ErrorDisplay.tsx
+│   ├── Footer.tsx
 │   ├── GithubUrlForm.tsx
+│   ├── Navigation.tsx
 │   ├── SocialShareButtons.tsx
 │   └── ThemeToggle.tsx
 ├── config
 │   └── api.ts
+├── hooks
+│   ├── useCodeBlockSyntaxHighlighter.ts
+│   ├── useMermaidProcessor.ts
+│   └── useProcessedContent.ts
 ├── lib
 │   └── api.ts
 ├── project-structure.txt
-└── types
-    └── index.ts
+├── types
+│   └── index.ts
+└── utils
+    ├── contentProcessors
+    │   ├── codeBlockProcessor.ts
+    │   ├── svgProcessor.ts
+    │   └── youtubeProcessor.ts
+    ├── exportCodeBlock.ts
+    └── siteMetadata.ts
 
-7 directories, 16 files
+10 directories, 31 files
