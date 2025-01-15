@@ -31,14 +31,14 @@ const QuickSearch = () => {
     };
 
     return (
-        <div className="py-4 shadow-md">
+        <div className="py-4 my-3">
             <div className="container mx-auto px-4 max-w-4xl">
                 <form onSubmit={handleSubmit} className="flex gap-2 items-center">
                     <input
                         type="text"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
-                        placeholder="Search your markdown"
+                        placeholder="Convert your markdown"
                         className="flex-1 px-4 py-2 rounded-md border-2 border-amber-200
                                  focus:ring-2 focus:ring-amber-200 focus:border-amber-300
                                  transition-all dark:bg-zinc-700 dark:text-white
@@ -50,7 +50,7 @@ const QuickSearch = () => {
                                  text-white hover:bg-amber-600
                                  transition-all font-medium"
                     >
-                        Search
+                        Convert
                     </button>
                 </form>
             </div>
