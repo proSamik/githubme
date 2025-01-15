@@ -7,7 +7,7 @@ const QuickSearch = () => {
     const [isFetching, setIsFetching] = useState(false);
     const router = useRouter();
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setIsFetching(true); // Start loading state
 
@@ -24,12 +24,11 @@ const QuickSearch = () => {
 
             if (pathSegments.length >= 2) {
                 const newPath = `/${pathSegments.join('/')}`;
-                await router.push(newPath);
+                router.push(newPath);
             }
         } catch {
-            // Handle error silently as per original code
-        } finally {
-            setIsFetching(false); // End loading state regardless of success/failure
+            setIsFetching(false);
+            return;
         }
     };
 
