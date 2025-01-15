@@ -9,9 +9,9 @@ export default function AboutContent() {
     const [showCreator, setShowCreator] = useState(false);
 
     return (
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-4xl mt-5">
             {/* Toggle Section */}
-            <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-8">
                 <div className="bg-amber-100 dark:bg-amber-900/50 p-1 rounded-lg inline-flex">
                     <button
                         onClick={() => setShowCreator(false)}
