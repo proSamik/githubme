@@ -6,11 +6,18 @@ interface Props {
     content: string;
 }
 
-export function ArticleContent({ content }: Props) {
+export default function ArticleContent({ content }: Props) {
     const { processedContent, contentRef } = useProcessedContent(content);
 
     return (
-        <article className="prose prose-lg dark:prose-invert w-full">
+        <article className="prose
+        prose-lg dark:prose-invert
+        w-full
+        mx-auto
+        max-w-[350px]
+        sm:max-w-screen-md
+        md:max-w-screen-lg
+        ">
             <div
                 ref={contentRef}
                 dangerouslySetInnerHTML={{__html: processedContent}}
