@@ -2,8 +2,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import GitHubMeSection from '@/components/GitHubMeSection';
-import CreatorSection from '@/components/CreatorSection';
+import GitHubMeSection from '@/components/about/GitHubMeSection';
+import CreatorSection from '@/components/about/CreatorSection';
 
 export default function AboutContent() {
     const [showCreator, setShowCreator] = useState(false);

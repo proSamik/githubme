@@ -1,7 +1,7 @@
 // components/GitHubMeSection.tsx
 import React from 'react';
 import Link from 'next/link';
-import FeatureGrid from '@/components/FeatureGrid';
+import FeatureGrid from '@/components/about/FeatureGrid';
 
 export default function GitHubMeSection() {
     return (
