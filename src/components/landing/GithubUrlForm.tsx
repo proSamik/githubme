@@ -43,7 +43,7 @@ export function GithubUrlForm() {
 
     return (
         // Gradient background container
-        <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="flex items-center justify-center p-4">
             {/* Card container with golden border */}
             <div className="w-full max-w-md dark:bg-zinc-800 rounded-xl shadow-xl p-8">
                 {/* Gradient title */}
