@@ -50,7 +50,7 @@ const QuickSearch = () => {
                             type="text"
                             value={url}
                             onChange={(e) => setUrl(e.target.value)}
-                            placeholder="Convert your markdown"
+                            placeholder="Markdown Path"
                             className="w-full pl-10 pr-24 py-2 rounded-lg
                                      bg-transparent
                                      focus:outline-none focus:ring-2 focus:ring-amber-200
