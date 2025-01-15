@@ -42,7 +42,7 @@ export function ErrorDisplay() {
                     Please check the URL and try again
                 </p>
                 <Link
-                    href="/public"
+                    href="/"
                     className="w-full py-2 px-4 rounded-md transition-all bg-gradient-to-r from-amber-500 to-yellow-500 dark:from-amber-600 dark:to-yellow-600 text-white hover:from-amber-600 hover:to-yellow-600 dark:hover:from-amber-700 dark:hover:to-yellow-700 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                 >
                     <svg
