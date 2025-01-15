@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createCopyButton, createExportButton} from "@/components/CodeBlockComponents";
-import {CodeBlock} from "@/components/CodeBlockRendrer";
+import {createCopyButton, createExportButton} from "@/components/article/CodeBlockComponents";
+import {CodeBlock} from "@/components/article/CodeBlockRendrer";
 
 
 /**

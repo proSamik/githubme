@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import {CodeBlockHeader, ThemedSyntaxHighlighter} from "@/components/CodeBlockComponents";
+import {CodeBlockHeader, ThemedSyntaxHighlighter} from "@/components/article/CodeBlockComponents";
 /**
  * Main CodeBlock Component
  * Combines CodeBlockHeader and ThemedSyntaxHighlighter
