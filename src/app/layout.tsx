@@ -1,12 +1,11 @@
 // src/app/layout.tsx
 import { Inter } from 'next/font/google';
-import { ErrorBoundary } from '@/components/ErrorBoundary';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import { ErrorBoundary } from '@/components/layout/ErrorBoundary';
+import Navigation from '@/components/layout/Navigation';
+import Footer from '@/components/layout/Footer';
 import './globals.css';
 import React from "react";
 import { Providers } from './providers';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -20,14 +19,21 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.className} bg-white dark:bg-dark-background text-zinc-900 dark:text-white transition-colors min-h-screen flex flex-col`}>
+        <body
+            className={`${inter.className} bg-white dark:bg-dark-background text-zinc-900 dark:text-white transition-colors min-h-screen flex flex-col`}>
         <Providers>
             <ErrorBoundary>
-                <Navigation />
-                <main className="container mx-auto px-4 py-8 max-w-4xl mt-16">
+                <Navigation/>
+                <main className="container
+                px-4 py-8
+                w-full
+                mx-auto
+                sm:max-w-screen-md
+                md:max-w-screen-lg
+                mt-8">
                     {children}
                 </main>
-                <Footer />
+                <Footer/>
             </ErrorBoundary>
         </Providers>
         </body>

@@ -6,7 +6,7 @@ interface Props {
     metadata: BackendResponse['metadata'];
 }
 
-export function ArticleFooter({ metadata }: Props) {
+export default function ArticleFooter({ metadata }: Props) {
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-GB', {

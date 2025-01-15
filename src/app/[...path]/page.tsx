@@ -1,9 +1,8 @@
 // app/[...path]/page.tsx
 import {fetchContent} from "@/lib/api";
-import {ArticleContent} from "@/components/ArticleContent";
-import ArticleHeader from "@/components/ArticleHeader";
-import {ArticleFooter} from "@/components/ArticleFooter";
-import { ErrorDisplay } from "@/components/ErrorDisplay";
+import { ErrorDisplay } from "@/components/layout/ErrorDisplay";
+import React from "react";
+import Article from "@/components/article/Article";
 
 interface Props {
     params: Promise<{
@@ -28,12 +27,10 @@ export default async function Page({ params: paramsPromise }: Props) {
         const data = await fetchContent(githubUrl);
         return (
             <>
-                <ArticleHeader
-                    metadata={data.metadata}
+                <Article
+                    data={data}
                     currentUrl={`/${path.join('/')}`}
                 />
-                <ArticleContent content={data.content} />
-                <ArticleFooter metadata={data.metadata} />
             </>
         );
     } catch {

@@ -6,11 +6,18 @@ interface Props {
     content: string;
 }
 
-export function ArticleContent({ content }: Props) {
+export default function ArticleContent({ content }: Props) {
     const { processedContent, contentRef } = useProcessedContent(content);
 
     return (
-        <article className="prose prose-lg dark:prose-invert w-full">
+        <article className="prose
+        prose-lg dark:prose-invert
+        w-full
+        mx-auto
+        max-w-[350px]
+        sm:max-w-screen-md
+        md:max-w-screen-lg
+        ">
             <div
                 ref={contentRef}
                 dangerouslySetInnerHTML={{__html: processedContent}}
@@ -44,14 +51,14 @@ export function ArticleContent({ content }: Props) {
                 prose-li:marker:text-zinc-800 dark:prose-li:marker:text-zinc-200
                 prose-li:text-zinc-800 dark:prose-li:text-zinc-200
 
-                // Tables with amber accents
+               // Tables with amber accents
                 [&_table]:border-amber-200 dark:[&_table]:border-amber-800
                 [&_th]:text-amber-800 dark:[&_th]:text-amber-200
                 [&_tr]:border-amber-200 dark:[&_tr]:border-amber-800
 
-
                 // Table layout
-                [&_table]:block [&_table]:overflow-x-auto [&_table]:w-full [&_table]:px-3
+                [&_table]:table [&_table]:mx-auto [&_table]:w-auto [&_table]:px-3
+                [&_th]:p-2
 
                 // Iframe handling
                 [&_iframe]:max-w-full [&_iframe]:h-auto [&_iframe]:aspect-video [&_iframe]:object-contain

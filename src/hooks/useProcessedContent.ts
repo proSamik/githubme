@@ -4,6 +4,7 @@ import { processCodeBlocks } from "@/utils/contentProcessors/codeBlockProcessor"
 import { processSVGs } from "@/utils/contentProcessors/svgProcessor";
 import { useCodeBlockSyntaxHighlighter } from "@/hooks/useCodeBlockSyntaxHighlighter";
 import { useMermaidProcessor } from '@/hooks/useMermaidProcessor';
+import {processCenteredMedia} from "@/utils/contentProcessors/mediaCenterProcessor";
 
 export default function useProcessedContent(content: string) {
     const [processedContent, setProcessedContent] = useState<string>("");
@@ -23,6 +24,7 @@ export default function useProcessedContent(content: string) {
             processedHtml = processYouTubeLinks(processedHtml);
             processedHtml = processCodeBlocks(processedHtml);
             processedHtml = processSVGs(processedHtml);
+            processedHtml = processCenteredMedia(processedHtml);
             setProcessedContent(processedHtml);
         };
 
