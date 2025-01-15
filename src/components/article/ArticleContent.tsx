@@ -51,14 +51,14 @@ export default function ArticleContent({ content }: Props) {
                 prose-li:marker:text-zinc-800 dark:prose-li:marker:text-zinc-200
                 prose-li:text-zinc-800 dark:prose-li:text-zinc-200
 
-                // Tables with amber accents
+               // Tables with amber accents
                 [&_table]:border-amber-200 dark:[&_table]:border-amber-800
                 [&_th]:text-amber-800 dark:[&_th]:text-amber-200
                 [&_tr]:border-amber-200 dark:[&_tr]:border-amber-800
 
-
                 // Table layout
-                [&_table]:block [&_table]:overflow-x-auto [&_table]:w-full [&_table]:px-3
+                [&_table]:table [&_table]:mx-auto [&_table]:w-auto [&_table]:px-3
+                [&_th]:p-2
 
                 // Iframe handling
                 [&_iframe]:max-w-full [&_iframe]:h-auto [&_iframe]:aspect-video [&_iframe]:object-contain
