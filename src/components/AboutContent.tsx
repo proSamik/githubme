@@ -5,19 +5,10 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import FeatureGrid from '@/components/FeatureGrid';
 
 export default function AboutContent() {
     const [showCreator, setShowCreator] = useState(false);
-
-    const features = [
-        "🎯 Render any GitHub markdown file directly using its URL",
-        "🌓 Light/Dark mode support",
-        "📱 Responsive design",
-        "🔗 Social Sharing buttons",
-        "📝 Clean typography with proper code highlighting",
-        "📊 Responsive tables with horizontal scrolling",
-        "🖼️ Centered image display"
-    ];
 
     return (
         <div className="w-full max-w-4xl">
@@ -79,23 +70,7 @@ export default function AboutContent() {
                     </div>
 
                     {/* Features Grid */}
-                    <div className="bg-white dark:bg-dark-background p-6 rounded-lg border border-amber-200 dark:border-amber-700">
-                        <h2 className="text-2xl font-semibold text-amber-800 dark:text-amber-200 mb-6">
-                            Features
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {features.map((feature, index) => (
-                                <div
-                                    key={index}
-                                    className="p-4 bg-amber-50 dark:bg-amber-900/30 rounded-lg"
-                                >
-                                    <p className="text-gray-700 dark:text-gray-300">
-                                        {feature}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <FeatureGrid />
 
                     {/* Call to Action */}
                     <div className="text-center">
@@ -108,7 +83,7 @@ export default function AboutContent() {
                     </div>
                 </div>
             ) : (
-                // About Creator Section
+                // About Creator Section remains unchanged
                 <div className="animate-fadeIn">
                     <div className="flex flex-col items-center py-1 pt-2 w-full">
                         <div className="flex flex-col items-center space-y-4 mb-2">
@@ -190,4 +165,3 @@ export default function AboutContent() {
         </div>
     );
 }
-
