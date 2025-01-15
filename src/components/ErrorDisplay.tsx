@@ -18,7 +18,7 @@ export function ErrorDisplay() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-amber-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <div className="min-h-screen flex items-center justify-center p-4 ">
             <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 border border-amber-200 dark:border-amber-700">
                 <div className="mb-6 text-amber-500 dark:text-amber-400">
                     <svg

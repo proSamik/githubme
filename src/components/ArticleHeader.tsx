@@ -11,13 +11,22 @@ interface ArticleHeaderProps {
 }
 
 export const ArticleHeader: React.FC<ArticleHeaderProps> = ({
-                                                         metadata,
-                                                         currentUrl
-                                                     }) => {
+                                                                metadata,
+                                                                currentUrl
+                                                            }) => {
     const githubProfileUrl = `https://github.com/${metadata.author}`;
 
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric'
+        }).replace(',', '');
+    };
+
     const AuthorInfo = () => (
-        <div className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 mt-7">
+        <div className="flex items-center space-x-2 text-gray-700 dark:text-gray-300">
             <a
                 href={githubProfileUrl}
                 target="_blank"
@@ -36,7 +45,7 @@ export const ArticleHeader: React.FC<ArticleHeaderProps> = ({
                         {metadata.author}
                     </div>
                     <div className="text-sm text-zinc-500 dark:text-dark-text-secondary">
-                        {new Date(metadata.lastUpdated).toLocaleDateString()}
+                        {formatDate(metadata.lastUpdated)}
                     </div>
                 </div>
             </a>
@@ -46,10 +55,10 @@ export const ArticleHeader: React.FC<ArticleHeaderProps> = ({
                 rel="noopener noreferrer"
                 className="ml-2 px-3 py-1 text-sm border border-gray-300 rounded-full hover:bg-gray-100"
             >
-            Follow
-        </a>
-</div>
-);
+                Follow
+            </a>
+        </div>
+    );
 
     return (
         <header className="mb-8 w-full">
