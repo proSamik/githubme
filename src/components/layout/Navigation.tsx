@@ -18,12 +18,13 @@ export default function Navigation() {
                             alt="GithubMe Logo"
                             fill
                             priority
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="object-contain invert dark:invert-0"
                         />
                     </Link>
                     <div className="flex items-center space-x-6">
                         <div className="flex items-center space-x-4">
-                            <Link href="/public"
+                            <Link href="/"
                                   className="text-amber-800 dark:text-amber-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
                                 Home
                             </Link>
