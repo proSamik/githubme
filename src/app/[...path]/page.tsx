@@ -1,11 +1,8 @@
 // app/[...path]/page.tsx
 import {fetchContent} from "@/lib/api";
-import {ArticleContent} from "@/components/article/ArticleContent";
-import ArticleHeader from "@/components/article/ArticleHeader";
-import {ArticleFooter} from "@/components/article/ArticleFooter";
 import { ErrorDisplay } from "@/components/layout/ErrorDisplay";
-import QuickSearch from "@/components/QuickSearch";
 import React from "react";
+import Article from "@/components/article/Article";
 
 interface Props {
     params: Promise<{
@@ -30,13 +27,10 @@ export default async function Page({ params: paramsPromise }: Props) {
         const data = await fetchContent(githubUrl);
         return (
             <>
-                <QuickSearch />
-                <ArticleHeader
-                    metadata={data.metadata}
+                <Article
+                    data={data}
                     currentUrl={`/${path.join('/')}`}
                 />
-                <ArticleContent content={data.content} />
-                <ArticleFooter metadata={data.metadata} />
             </>
         );
     } catch {
