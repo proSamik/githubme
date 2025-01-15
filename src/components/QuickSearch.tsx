@@ -4,10 +4,12 @@ import { useRouter } from 'next/navigation';
 
 const QuickSearch = () => {
     const [url, setUrl] = useState('');
+    const [isFetching, setIsFetching] = useState(false);
     const router = useRouter();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setIsFetching(true); // Start loading state
 
         let pathSegments: string[];
 
@@ -22,11 +24,12 @@ const QuickSearch = () => {
 
             if (pathSegments.length >= 2) {
                 const newPath = `/${pathSegments.join('/')}`;
-                router.push(newPath);
-                setUrl('');
+                await router.push(newPath);
             }
         } catch {
-            return;
+            // Handle error silently as per original code
+        } finally {
+            setIsFetching(false); // End loading state regardless of success/failure
         }
     };
 
@@ -43,14 +46,17 @@ const QuickSearch = () => {
                                  focus:ring-2 focus:ring-amber-200 focus:border-amber-300
                                  transition-all dark:bg-zinc-700 dark:text-white
                                  dark:border-zinc-600 dark:focus:border-amber-300"
+                        disabled={isFetching}
                     />
                     <button
                         type="submit"
-                        className="px-6 py-2 rounded-md bg-amber-500
-                                 text-white hover:bg-amber-600
-                                 transition-all font-medium"
+                        className={`px-6 py-2 rounded-md transition-all font-medium
+                                 ${isFetching
+                            ? 'bg-amber-300 cursor-not-allowed'
+                            : 'bg-amber-500 text-white hover:bg-amber-600'}`}
+                        disabled={isFetching}
                     >
-                        Convert
+                        {isFetching ? 'Converting...' : 'Convert'}
                     </button>
                 </form>
             </div>
