@@ -6,8 +6,6 @@ import Footer from '@/components/layout/Footer';
 import './globals.css';
 import React from "react";
 import { Providers } from './providers';
-import QuickSearch from "@/components/QuickSearch";
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -26,7 +24,6 @@ export default function RootLayout({
             <ErrorBoundary>
                 <Navigation />
                 <main className="container mx-auto px-4 py-8 max-w-4xl mt-8">
-                    <QuickSearch />
                     {children}
                 </main>
                 <Footer />
