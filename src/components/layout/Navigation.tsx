@@ -10,11 +10,11 @@ export default function Navigation() {
                 className="flex w-full max-w-4xl px-3 border-b border-l border-r border-amber-200 dark:border-amber-700 rounded-b-lg">
                 <div className="flex justify-between items-center h-16 w-full">
                     <Link
-                        href="/public"
+                        href="/"
                         className="relative w-16 h-16"
                     >
                         <Image
-                            src="/logo.png"
+                            src="/logo-crop.png"
                             alt="GithubMe Logo"
                             fill
                             priority
