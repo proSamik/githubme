@@ -14,6 +14,7 @@ export default function GitHubMeSection() {
                         alt="GithubMe Logo"
                         fill
                         priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-contain invert dark:invert-0"
                     />
                 </div>
