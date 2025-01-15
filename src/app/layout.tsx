@@ -24,7 +24,7 @@ export default function RootLayout({
         <Providers>
             <ErrorBoundary>
                 <Navigation />
-                <main className="container mx-auto px-4 py-8 max-w-4xl mt-16">
+                <main className="container mx-auto px-4 py-8 max-w-4xl mt-8">
                     {children}
                 </main>
                 <Footer />
