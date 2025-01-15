@@ -10,7 +10,7 @@ interface LandingPageProps {
 
 export function LandingPage({ error }: LandingPageProps) {
     return (
-        <div className="min-h-screen flex flex-col items-center px-4 py-8 space-y-12">
+        <div className="min-h-screen flex flex-col items-center px-4 py-4 space-y-12">
             <HeroSection />
             <AutoDemoSection />
             <div className="w-full max-w-xl">
