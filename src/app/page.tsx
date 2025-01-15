@@ -1,11 +1,9 @@
 // src/app/page.tsx
-import { ArticleHeader } from '@/components/article/ArticleHeader';
-import { ArticleContent } from '@/components/article/ArticleContent';
-import { ArticleFooter } from '@/components/article/ArticleFooter';
 import { fetchContent } from '@/lib/api';
 import { LandingPage } from '@/components/landing/LandingPage';
 import QuickSearch from "@/components/QuickSearch";
 import React from "react";
+import Article from "@/components/article/Article";
 
 interface PageProps {
     searchParams: Promise<{ url?: string }>;
@@ -28,10 +26,10 @@ export default async function Page({ searchParams: searchParamsPromise }: PagePr
         const data = await fetchContent(url);
         return (
             <>
-                <QuickSearch />
-                <ArticleHeader metadata={data.metadata} currentUrl={url} />
-                <ArticleContent content={data.content} />
-                <ArticleFooter metadata={data.metadata} />
+                <Article
+                    data={data}
+                    currentUrl={url}
+                />
             </>
         );
     } catch {
