@@ -1,15 +1,15 @@
 'use client';
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const QuickSearch = () => {
     const [url, setUrl] = useState('');
     const [isFetching, setIsFetching] = useState(false);
     const router = useRouter();
+    const pathname = usePathname();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setIsFetching(true); // Start loading state
 
         let pathSegments: string[];
 
@@ -24,6 +24,12 @@ const QuickSearch = () => {
 
             if (pathSegments.length >= 2) {
                 const newPath = `/${pathSegments.join('/')}`;
+
+                // Only set loading state if we're navigating to a different path
+                if (newPath !== pathname) {
+                    setIsFetching(true);
+                }
+
                 router.push(newPath);
             }
         } catch {
