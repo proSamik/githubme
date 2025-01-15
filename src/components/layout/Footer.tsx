@@ -4,11 +4,15 @@ import {FaGithub, FaLinkedin, FaTwitter} from "react-icons/fa";
 export default function Footer() {
     return (
         <footer className="mt-auto flex justify-center">
-            <div className="w-full max-w-4xl border-t border-l border-r border-amber-200 dark:border-amber-700 rounded-t-lg">
+            <div className="w-full
+             mx-auto
+             sm:max-w-screen-md
+             md:max-w-screen-lg
+            border-t border-l border-r border-amber-200 dark:border-amber-700 rounded-t-lg">
                 <div className="px-4 py-2">
-                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
                         <div>
-                            <p className="text-sm text-amber-800 dark:text-amber-200">
+                            <p className="text-sm text-amber-800 dark:text-amber-200 ">
                                 © {new Date().getFullYear()} GithubMe. All rights reserved.
                             </p>
                         </div>
@@ -23,7 +27,7 @@ export default function Footer() {
                             <FaLinkedin size={24} />
                             <span className="mt-1 text-xs">
                                     proSamik
-                                </span>
+                            </span>
                         </a>
                         <a
                         href="https://www.twitter.com/prosamik"
@@ -50,9 +54,9 @@ export default function Footer() {
                                 </span>
                 </a>
             </div>
-        </div>
-</div>
-</div>
-</footer>
+                    </div>
+                </div>
+            </div>
+        </footer>
 );
 }
