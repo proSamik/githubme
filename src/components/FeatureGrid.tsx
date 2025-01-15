@@ -49,8 +49,8 @@ const features: Feature[] = [
 
 export default function FeatureGrid() {
     return (
-        <div className="bg-white dark:bg-dark-background p-6 pr-12 rounded-lg border border-amber-200 dark:border-amber-700">
-            <h2 className="text-2xl font-semibold text-amber-800 dark:text-amber-200 mb-6">
+        <div className="bg-white dark:bg-dark-background p-6 rounded-lg">
+            <h2 className="text-2xl font-semibold text-amber-800 dark:text-amber-200 mb-6 flex justify-center">
                 Features
             </h2>
             <div className="space-y-4">
