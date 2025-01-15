@@ -1,9 +1,10 @@
 // src/app/page.tsx
+
 import { ArticleHeader } from '@/components/article/ArticleHeader';
 import { ArticleContent } from '@/components/article/ArticleContent';
 import { ArticleFooter } from '@/components/article/ArticleFooter';
 import { fetchContent } from '@/lib/api';
-import { GithubUrlForm } from '@/components/GithubUrlForm';
+import { LandingPage } from '@/components/landing/LandingPage';
 
 interface PageProps {
     searchParams: Promise<{ url?: string }>;
@@ -14,30 +15,19 @@ export default async function Page({ searchParams: searchParamsPromise }: PagePr
     const { url } = searchParams;
 
     if (!url) {
-        return <GithubUrlForm />;
+        return <LandingPage />;
     }
 
     try {
         const data = await fetchContent(url);
         return (
             <>
-                <ArticleHeader
-                    metadata={data.metadata}
-                    currentUrl={url}
-                />
+                <ArticleHeader metadata={data.metadata} currentUrl={url} />
                 <ArticleContent content={data.content} />
                 <ArticleFooter metadata={data.metadata} />
             </>
         );
     } catch {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center text-red-600">
-                    <h2 className="text-2xl font-bold mb-4">Error loading content</h2>
-                    <p>Please check the URL and try again</p>
-                    <GithubUrlForm />
-                </div>
-            </div>
-        );
+        return <LandingPage error="Error loading content. Please check the URL and try again." />;
     }
 }
