@@ -8,6 +8,18 @@ body {
   @apply bg-white dark:bg-dark-background text-black dark:text-dark-text;
 }
 
+@keyframes colorWaveCycle {
+  0%, 100% {
+    color: #78350f; /* amber-900 */
+  }
+  33% {
+    color: #d97706; /* amber-600 */
+  }
+  66% {
+    color: #fbbf24; /* amber-400 */
+  }
+}
+
 .mermaid-wrapper {
   scrollbar-width: thin;
   scrollbar-color: rgba(156, 163, 175, 0.7) transparent;
