@@ -20,11 +20,29 @@ interface ArticleProps {
 const Article: React.FC<ArticleProps> = ({ data, currentUrl }) => {
     return (
         <>
-            <QuickSearch />
-            <ArticleHeader
-                metadata={data.metadata}
-                currentUrl={currentUrl}
-            />
+            <div className="mt-4 mb-6
+            w-full
+            max-w-[350px]
+            sm:max-w-screen-md
+            md:max-w-screen-lg
+            flex justify-center
+            mx-auto
+            ">
+                <QuickSearch/>
+            </div>
+            <div className="px-2
+            w-full
+            mx-auto
+            max-w-[350px]
+            sm:max-w-screen-md
+            md:max-w-screen-lg
+            flex justify-center
+            ">
+                <ArticleHeader
+                    metadata={data.metadata}
+                    currentUrl={currentUrl}
+                />
+            </div>
             <ArticleContent
                 content={data.content}
             />
