@@ -39,11 +39,17 @@ const QuickSearch = () => {
     };
 
     return (
-        <div className="py-4 my-3">
-            <div className="container mx-auto px-4 max-w-4xl">
+        <div className="
+                w-96
+                sm:w-[620px]
+                md:w-[600px]
+                lg:w-[740px]
+                justify-center
+                px-4 sm:px-0">
+            <div className="container mx-auto px-4 ">
                 <form onSubmit={handleSubmit} className="relative flex items-center">
                     <div className="absolute left-3 text-gray-400 dark:text-gray-500">
-                        <Search size={20} />
+                        <Search size={20}/>
                     </div>
                     <div className="relative flex w-full rounded-lg border border-amber-200 dark:border-amber-700">
                         <input
