@@ -49,8 +49,9 @@ export default function HeroSection() {
             mx-auto
             px-4
             mb-2
+            mt-8
         ">
-            <div className="pt-1 mb-4">
+            <div className="mb-4">
                 <QuickSearch/>
             </div>
 
