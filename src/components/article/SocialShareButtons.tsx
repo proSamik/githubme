@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { FaTwitter, FaLinkedinIn, FaInstagram, FaShareAlt, FaCopy } from "react-icons/fa";
+import { FaTwitter, FaLinkedinIn, FaInstagram, FaCopy } from "react-icons/fa";
 
 interface SocialShareButtonsProps {
     shareUrl: string;
@@ -19,16 +19,6 @@ const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({ shareUrl, share
             setTimeout(() => setCopied(false), 2000);
         } catch (err) {
             console.error("Failed to copy link:", err);
-        }
-    };
-
-    const handleCopyContentWithLink = async () => {
-        try {
-            await navigator.clipboard.writeText(`${shareTitle}\n${shareUrl}`);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        } catch (err) {
-            console.error("Failed to copy content with link:", err);
         }
     };
 
@@ -54,46 +44,58 @@ const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({ shareUrl, share
     };
 
     return (
-        <div className="relative">
-            {/* Share Buttons */}
-            <div className="flex space-x-2">
-                <button
-                    onClick={shareHandlers.twitter}
-                    className="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors"
-                    aria-label="Share on Twitter"
-                >
-                    <FaTwitter className="w-6 h-6" />
-                </button>
+        <div className="flex flex-col items-center">
+            {/* Share Buttons Container */}
+            <div className="flex">
+                <div className="bg-white dark:bg-dark-background shadow-lg dark:shadow-amber-200 dark:shadow-sm
+                             px-6 py-3 rounded-full flex items-center space-x-4
+                             border border-amber-200 dark:border-amber-800">
+                    <span className="text-gray-700 dark:text-gray-300">Share: </span>
 
-                <button
-                    onClick={shareHandlers.linkedin}
-                    className="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors"
-                    aria-label="Share on LinkedIn"
-                >
-                    <FaLinkedinIn className="w-6 h-6" />
-                </button>
+                    {/* Twitter */}
+                    <a
+                        onClick={shareHandlers.twitter}
+                        className="cursor-pointer hover:text-blue-400 flex flex-col items-center transition-colors"
+                        aria-label="Share on Twitter"
+                    >
+                        <FaTwitter size={24} />
+                    </a>
 
-                <button
-                    onClick={shareHandlers.instagram}
-                    className="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors"
-                    aria-label="Share on Instagram"
-                >
-                    <FaInstagram className="w-6 h-6" />
-                </button>
+                    {/* LinkedIn */}
+                    <a
+                        onClick={shareHandlers.linkedin}
+                        className="cursor-pointer hover:text-blue-600 flex flex-col items-center transition-colors"
+                        aria-label="Share on LinkedIn"
+                    >
+                        <FaLinkedinIn size={24} />
+                    </a>
 
-                <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors"
-                    aria-label="More share options"
-                >
-                    <FaShareAlt className="w-5 h-5" />
-                </button>
+                    {/* Instagram */}
+                    <a
+                        onClick={shareHandlers.instagram}
+                        className="cursor-pointer hover:text-pink-600 flex flex-col items-center transition-colors"
+                        aria-label="Share on Instagram"
+                    >
+                        <FaInstagram size={24} />
+                    </a>
+
+                    {/* More Share Options */}
+                    <a
+                        onClick={() => setIsModalOpen(true)}
+                        className="cursor-pointer hover:text-amber-600 dark:hover:text-amber-400 flex flex-col items-center transition-colors"
+                        aria-label="More share options"
+                    >
+                        <FaCopy size={20} />
+                    </a>
+                </div>
             </div>
 
             {/* Share Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setIsModalOpen(false)}>
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-96 max-w-[90vw]" onClick={e => e.stopPropagation()}>
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+                     onClick={() => setIsModalOpen(false)}>
+                    <div className="bg-white dark:bg-dark-background p-6 rounded-lg shadow-lg w-96 max-w-[90vw]"
+                         onClick={e => e.stopPropagation()}>
                         <div className="flex justify-between items-center mb-4">
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                                 Share Options
@@ -111,44 +113,19 @@ const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({ shareUrl, share
 
                         {/* Copy Link Section */}
                         <div className="mb-4">
-                            <label htmlFor="link" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Copy Link
-                            </label>
                             <div className="flex gap-2">
                                 <input
                                     type="text"
-                                    id="link"
                                     readOnly
                                     value={shareUrl}
-                                    className="flex-1 p-2 text-sm border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                    className="flex-1 p-2 text-sm border border-amber-200 dark:border-amber-800 rounded-full
+                                             dark:bg-dark-background dark:text-white focus:ring-2 focus:ring-amber-500"
                                 />
                                 <button
                                     onClick={handleCopyLink}
-                                    className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                                    className="p-2 bg-amber-600 text-white rounded-full hover:bg-amber-700
+                                             transition-colors flex items-center space-x-2"
                                     aria-label="Copy link"
-                                >
-                                    <FaCopy className="w-4 h-4" />
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Copy Content with Link Section */}
-                        <div>
-                            <label htmlFor="content" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Copy Content with Link
-                            </label>
-                            <div className="flex gap-2">
-                                <textarea
-                                    id="content"
-                                    readOnly
-                                    value={`${shareTitle}\n${shareUrl}`}
-                                    rows={3}
-                                    className="flex-1 p-2 text-sm border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white resize-none"
-                                />
-                                <button
-                                    onClick={handleCopyContentWithLink}
-                                    className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
-                                    aria-label="Copy content with link"
                                 >
                                     <FaCopy className="w-4 h-4" />
                                 </button>
@@ -157,7 +134,7 @@ const SocialShareButtons: React.FC<SocialShareButtonsProps> = ({ shareUrl, share
 
                         {/* Copied Feedback */}
                         {copied && (
-                            <div className="mt-3 text-sm text-green-500 dark:text-green-400">
+                            <div className="mt-3 text-sm text-amber-600 dark:text-amber-400">
                                 Copied to clipboard!
                             </div>
                         )}
