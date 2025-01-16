@@ -17,8 +17,15 @@ export default function ArticleFooter({ metadata }: Props) {
     };
 
     return (
-        <footer className="mt-8 pt-6 border-t border-amber-200 dark:border-amber-700/30">
-            <div className="flex flex-col sm:flex-row justify-center items-start sm:items-center gap-8 text-sm">
+        <footer className="mt-8
+        pt-6
+        border-t border-amber-200 dark:border-amber-700/30
+        ">
+            <div className="
+            flex flex-col
+            sm:flex-row
+            justify-center items-center
+            gap-8 text-sm">
                 <span className="text-zinc-600 dark:text-zinc-400">
                     Last updated: {formatDate(metadata.lastUpdated)}
                 </span>
