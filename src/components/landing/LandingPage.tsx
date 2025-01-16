@@ -10,34 +10,61 @@ interface LandingPageProps {
 }
 
 export function LandingPage({ error }: LandingPageProps) {
-    const autoDemoRef = useRef<HTMLDivElement>(null);
-    const githubFormRef = useRef<HTMLDivElement>(null);
     const lastScrollTimeRef = useRef(0);
     const scrollCooldown = 1000; // 1 second cooldown between scrolls
+
+    const scrollToSection = (elementId: string) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offset = window.innerHeight * 0.25; // 1/4 of viewport height
+            window.scrollTo({
+                top: elementPosition - offset,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const getCurrentSection = () => {
+        const sections = ['hero-section', 'auto-demo-section', 'github-url-form'];
+        const viewportMiddle = window.innerHeight / 2;
+
+        for (const sectionId of sections) {
+            const rect = document.getElementById(sectionId)?.getBoundingClientRect();
+            if (rect && rect.top <= viewportMiddle && rect.bottom >= viewportMiddle) {
+                return sectionId;
+            }
+        }
+        return sections[0]; // Default to hero section
+    };
 
     useEffect(() => {
         const handleWheel = (event: WheelEvent) => {
             const currentTime = Date.now();
-
-            // Check if enough time has passed since last scroll
             if (currentTime - lastScrollTimeRef.current < scrollCooldown) {
                 return;
             }
 
-            if (event.deltaY > 0) { // Scrolling down
-                const heroRect = document.getElementById('hero-section')?.getBoundingClientRect();
-                const autoDemoRect = autoDemoRef.current?.getBoundingClientRect();
-                const githubFormRect = githubFormRef.current?.getBoundingClientRect();
+            const currentSection = getCurrentSection();
+            const sections = ['hero-section', 'auto-demo-section', 'github-url-form'];
+            const currentIndex = sections.indexOf(currentSection);
 
-                if (heroRect && heroRect.bottom > 0) {
-                    // When in hero section, scroll to auto demo
-                    autoDemoRef.current?.scrollIntoView({ behavior: 'smooth' });
-                    lastScrollTimeRef.current = currentTime;
-                } else if (autoDemoRect && autoDemoRect.bottom > 0 && githubFormRect && githubFormRect.bottom > window.innerHeight) {
-                    // When in auto demo section and GitHub form is below viewport, scroll to gitHub form
-                    githubFormRef.current?.scrollIntoView({ behavior: 'smooth' });
-                    lastScrollTimeRef.current = currentTime;
+            if (event.deltaY > 0 && currentIndex < sections.length - 1) {
+                // Scrolling down
+                scrollToSection(sections[currentIndex + 1]);
+                lastScrollTimeRef.current = currentTime;
+            } else if (event.deltaY < 0 && currentIndex > 0) {
+                // Scrolling up
+                if (currentIndex === 1) {
+                    scrollToTop();
+                } else {
+                    scrollToSection(sections[currentIndex - 1]);
                 }
+                lastScrollTimeRef.current = currentTime;
             }
         };
 
@@ -47,15 +74,15 @@ export function LandingPage({ error }: LandingPageProps) {
 
     return (
         <div className="flex flex-col items-center px-4 pb-4">
-            <div className="min-h-screen flex items-start" id="hero-section">
+            <div className="pt-8" id="hero-section">
                 <HeroSection />
             </div>
 
-            <div className="min-h-screen flex items-center" ref={autoDemoRef}>
+            <div className="pt-4 mb-12" id="auto-demo-section">
                 <AutoDemoSection />
             </div>
 
-            <div className="min-h-screen flex items-center" ref={githubFormRef} id="github-url-form">
+            <div className="pt-8" id="github-url-form">
                 {error && (
                     <div className="text-center text-red-600 mb-6">
                         <p className="font-medium">{error}</p>
