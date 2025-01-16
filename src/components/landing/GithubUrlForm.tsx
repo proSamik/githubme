@@ -43,14 +43,14 @@ export function GithubUrlForm() {
 
     return (
         // Gradient background container
-        <div className="flex items-center justify-center p-4">
+        <div className="flex items-center justify-center" >
             {/* Card container with golden border */}
             <div className="w-full max-w-md dark:bg-zinc-800 rounded-xl shadow-xl p-8">
                 {/* Gradient title */}
                 <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-amber-600 to-yellow-500 text-transparent bg-clip-text">
                     GitHub Me- A Stylish Markdown Viewer
                 </h1>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4" id="github-url-form">
                     <div>
                         <label
                             htmlFor="github-url"
