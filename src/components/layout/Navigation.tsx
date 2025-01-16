@@ -5,9 +5,16 @@ import ThemeToggle from '@/components/layout/ThemeToggle';
 
 export default function Navigation() {
     return (
-        <div className="fixed top-0 left-0 right-0 bg-white dark:bg-dark-background z-50 flex justify-center w-full mx-auto
-         sm:max-w-screen-md
-         md:max-w-screen-lg ">
+        <div
+            className="
+            fixed top-0 left-0 right-0
+            bg-white dark:bg-dark-background
+            z-50
+            flex justify-center
+             w-full mx-auto
+             sm:max-w-screen-md
+             md:max-w-screen-lg
+             ">
 
             <nav
                 className="flex w-full px-3 border-b border-l border-r border-amber-200 dark:border-amber-700 rounded-b-lg">
