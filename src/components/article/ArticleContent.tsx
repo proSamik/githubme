@@ -56,8 +56,10 @@ export default function ArticleContent({ content }: Props) {
                 [&_th]:text-amber-800 dark:[&_th]:text-amber-200
                 [&_tr]:border-amber-200 dark:[&_tr]:border-amber-800
 
-                // Table layout
-                [&_table]:table [&_table]:mx-auto [&_table]:w-auto [&_table]:px-3
+                // Table container
+                [&_table]:w-full
+                [&_table]:overflow-x-auto
+                [&_table]:block
                 [&_th]:p-2
 
                 // Iframe handling
