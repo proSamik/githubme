@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
 import { AutoDemoSection } from '@/components/landing/AutoDemoSection';
 import { GithubUrlForm } from '@/components/landing/GithubUrlForm';
 import HeroSection from "@/components/landing/HeroSection";
@@ -11,14 +10,13 @@ interface LandingPageProps {
 
 export function LandingPage({ error }: LandingPageProps) {
 
-
     return (
         <div className="flex flex-col items-center px-4 pb-4">
-            <div className="pt-8" id="hero-section">
+            <div className="pt-4" id="hero-section">
                 <HeroSection />
             </div>
 
-            <div className="min-h-screen" id="auto-demo-section">
+            <div className="max-h-screen mb-10" id="auto-demo-section">
                 <AutoDemoSection />
             </div>
 
