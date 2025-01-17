@@ -1,7 +1,6 @@
 // src/app/page.tsx
 import { fetchContent } from '@/lib/api';
 import { LandingPage } from '@/components/landing/LandingPage';
-import QuickSearch from "@/components/QuickSearch";
 import React from "react";
 import Article from "@/components/article/Article";
 
@@ -16,7 +15,6 @@ export default async function Page({ searchParams: searchParamsPromise }: PagePr
     if (!url) {
         return (
             <>
-                <QuickSearch/>
                 <LandingPage />
             </>
         );
@@ -35,7 +33,6 @@ export default async function Page({ searchParams: searchParamsPromise }: PagePr
     } catch {
         return(
             <>
-                <QuickSearch />
                 <LandingPage error="Error loading content. Please check the URL and try again." />
             </>
         );

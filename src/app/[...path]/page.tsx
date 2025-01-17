@@ -29,7 +29,7 @@ export default async function Page({ params: paramsPromise }: Props) {
             <>
                 <Article
                     data={data}
-                    currentUrl={`/${path.join('/')}`}
+                    currentUrl={`githubme.com/${path.join('/')}`}
                 />
             </>
         );

@@ -1,105 +1,79 @@
 'use client';
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
+import QuickSearch from "@/components/QuickSearch";
+import {CiGlobe} from "react-icons/ci";
 
 export function GithubUrlForm() {
-    const [url, setUrl] = useState('');
-    const [error, setError] = useState<string | null>(null);
-    const [isFetching, setIsFetching] = useState(false);
-    const router = useRouter();
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setError(null);
-        setIsFetching(true);
-
-        let pathSegments: string[];
-
-        try {
-            if (url.includes('github.com')) {
-                // Handle full GitHub URLs or github.com/user/repo
-                const cleanUrl = url.includes('https://') ? url : `https://${url}`;
-                const githubUrl = new URL(cleanUrl);
-                pathSegments = githubUrl.pathname.split('/').filter(Boolean);
-            } else {
-                // Handle direct path input (user/repo)
-                pathSegments = url.split('/').filter(Boolean);
-            }
-
-            if (pathSegments.length < 2) {
-                setError('Please enter a valid GitHub repository path (username/repo)');
-                setIsFetching(false);
-                return;
-            }
-
-            // Construct new path
-            const newPath = `/${pathSegments.join('/')}`;
-            router.push(newPath);
-        } catch {
-            setError('Please enter a valid GitHub repository path\nExample: username/repo or github.com/username/repo');
-            setIsFetching(false);
-        }
-    };
-
     return (
-        // Gradient background container
-        <div className="flex items-center justify-center p-4">
-            {/* Card container with golden border */}
-            <div className="w-full max-w-md dark:bg-zinc-800 rounded-xl shadow-xl p-8">
-                {/* Gradient title */}
-                <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-amber-600 to-yellow-500 text-transparent bg-clip-text">
-                    GitHub Me- A Stylish Markdown Viewer
-                </h1>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label
-                            htmlFor="github-url"
-                            className="block text-sm font-medium mb-2 text-amber-800"
-                        >
-                            Enter GitHub Repository Path
-                        </label>
-                        <input
-                            id="github-url"
-                            type="text"
-                            value={url}
-                            onChange={(e) => {
-                                setUrl(e.target.value);
-                                setError(null);
-                            }}
-                            placeholder="github.com/username/filepath"
-                            className={`w-full px-4 py-2 rounded-md border-2 focus:ring-2 focus:ring-amber-200 focus:border-amber-300 transition-all dark:bg-white dark:text-dark-background ${
-                                error ? 'border-red-500' : 'border-amber-200'
-                            }`}
-                        />
-                        {error && (
-                            <p className="mt-2 text-sm text-red-600">
-                                {error}
-                            </p>
-                        )}
-                        <p className="mt-2 text-sm text-amber-700">
-                            Examples:
-                            <br/>
-                            • username/repo
-                            <br/>
-                            • github.com/username/repo
-                            <br/>
-                            • github.com/username/repo/blob/main/file.md
-                            <br/>
-                            • https://github.com/username/repo/blob/main/file.md
-                        </p>
+        <div className="w-full max-w-screen-lg px-4">
+            {/* Main container with gradient background */}
+            <div className="flex flex-col items-center space-y-8">
+                {/* Title section */}
+                <div className="text-center space-y-2">
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-600 to-yellow-500 text-transparent bg-clip-text">
+                        GitHub Me
+                    </h1>
+                    <p className="text-gray-600 dark:text-gray-300">
+                        A Stylish Markdown Viewer
+                    </p>
+                </div>
+
+                {/* Search section */}
+                <div className="w-full flex justify-center" id="github-url-form">
+                    <QuickSearch />
+                </div>
+
+                {/* Examples section */}
+                <div className="w-full flex justify-center px-5">
+                    <div className="bg-white dark:bg-dark-background shadow-lg dark:shadow-amber-100 dark:shadow-sm rounded-xl p-6 space-y-4">
+                        <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400">
+                            <CiGlobe size={20} />
+                            <h2 className="text-lg font-semibold">Path Example</h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {/* Basic Format */}
+                            <div className="space-y-2">
+                                <h3 className="font-medium text-amber-700 dark:text-amber-300">
+                                    Basic Format
+                                </h3>
+                                <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 overflow-x-auto">
+                                    <code className="text-sm whitespace-nowrap">username/repo</code>
+                                </div>
+                            </div>
+
+                            {/* GitHub URL */}
+                            <div className="space-y-2">
+                                <h3 className="font-medium text-amber-700 dark:text-amber-300">
+                                    GitHub URL
+                                </h3>
+                                <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 overflow-x-auto">
+                                    <code className="text-sm whitespace-nowrap">github.com/username/repo</code>
+                                </div>
+                            </div>
+
+                            {/* Full Repository Path */}
+                            <div className="space-y-2">
+                                <h3 className="font-medium text-amber-700 dark:text-amber-300">
+                                    Repository with File
+                                </h3>
+                                <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 overflow-x-auto">
+                                    <code className="text-sm whitespace-nowrap">github.com/username/repo/blob/main/file.md</code>
+                                </div>
+                            </div>
+
+                            {/* Fetch README.md */}
+                            <div className="space-y-2">
+                                <h3 className="font-medium text-amber-700 dark:text-amber-300">
+                                    Fetch README.md
+                                </h3>
+                                <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 overflow-x-auto">
+                                    <code className="text-sm whitespace-nowrap">https://github.com/username/repo</code>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button
-                        type="submit"
-                        className={`w-full py-2 px-4 rounded-md transition-all ${
-                            isFetching
-                                ? 'bg-amber-300 cursor-not-allowed'
-                                : 'bg-gradient-to-r from-amber-500 to-yellow-500 text-white hover:from-amber-600 hover:to-yellow-600 shadow-md hover:shadow-lg'
-                        }`}
-                        disabled={isFetching}
-                    >
-                        {isFetching ? 'Fetching...' : 'View Content'}
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     );
