@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import QuickSearch from "@/components/QuickSearch";
-import { FileCode } from 'lucide-react';
+import {CiGlobe} from "react-icons/ci";
 
 export function GithubUrlForm() {
     return (
@@ -19,16 +19,16 @@ export function GithubUrlForm() {
                 </div>
 
                 {/* Search section */}
-                <div className="w-full" id="github-url-form">
+                <div className="w-full flex justify-center" id="github-url-form">
                     <QuickSearch />
                 </div>
 
                 {/* Examples section */}
-                <div className="w-full max-w-4xl mx-auto">
+                <div className="w-full flex justify-center px-5">
                     <div className="bg-white dark:bg-dark-background shadow-lg dark:shadow-amber-100 dark:shadow-sm rounded-xl p-6 space-y-4">
                         <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400">
-                            <FileCode size={20} />
-                            <h2 className="text-lg font-semibold">Example Formats</h2>
+                            <CiGlobe size={20} />
+                            <h2 className="text-lg font-semibold">Path Example</h2>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
