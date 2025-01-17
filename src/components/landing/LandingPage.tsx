@@ -16,11 +16,11 @@ export function LandingPage({ error }: LandingPageProps) {
                 <HeroSection />
             </div>
 
-            <div className="max-h-screen mb-10" id="auto-demo-section">
+            <div className="max-h-screen mb-20" id="auto-demo-section">
                 <AutoDemoSection />
             </div>
 
-            <div className="pt-8" id="github-url-form">
+            <div className="max-h-screen" id="github-url-form">
                 {error && (
                     <div className="text-center text-red-600 mb-6">
                         <p className="font-medium">{error}</p>
