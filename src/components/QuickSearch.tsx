@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { Search } from 'lucide-react';
+import {FaGithub} from "react-icons/fa";
 
 const QuickSearch = () => {
     const [url, setUrl] = useState('');
@@ -49,14 +49,14 @@ const QuickSearch = () => {
             <div className="container mx-auto px-4 ">
                 <form onSubmit={handleSubmit} className="relative flex items-center">
                     <div className="absolute left-3 text-gray-400 dark:text-gray-500">
-                        <Search size={20}/>
+                        <FaGithub size={20}/>
                     </div>
                     <div className="relative flex w-full rounded-lg border border-amber-200 dark:border-amber-700">
                         <input
                             type="text"
                             value={url}
                             onChange={(e) => setUrl(e.target.value)}
-                            placeholder="GitHub Path"
+                            placeholder="Markdown Path"
                             className="w-full pl-10 pr-24 py-2 rounded-lg
                                      bg-transparent
                                      focus:outline-none focus:ring-2 focus:ring-amber-200
