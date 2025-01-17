@@ -67,7 +67,7 @@ export default function HeroSection() {
 
                 <div className="flex flex-col space-y-2 lg:space-y-4">
                     <p className="text-[16px] md:text-2xl font-bold text-center text-amber-600 dark:text-gray-300 text-wrap max-w-3xl">
-                        One Stop Place for Markdown Content Viewer
+                        One Stop Place for Markdown Content
                     </p>
 
                     <p className="text-[16px] md:text-2xl text-center text-gray-600 dark:text-gray-300 text-wrap max-w-3xl">
@@ -86,7 +86,7 @@ export default function HeroSection() {
                         <div
                                 className="min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full flex items-center justify-center gap-3">
                                 <FaGithub size={20} className="text-amber-600 dark:text-amber-400"/>
-                                <span>Instant Conversion</span>
+                                <span>Single Source of Truth</span>
                             </div>
 
                             <div
@@ -123,11 +123,11 @@ export default function HeroSection() {
                             <div
                                 className="min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full flex items-center justify-center gap-3">
                                 <Camera size={20} className="text-amber-600 dark:text-amber-400"/>
-                                <span>Screenshot png</span>
+                                <span>Screenshot as png</span>
                             </div>
 
                             <div
-                                className="hidden lg:visible min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full lg:flex items-center justify-center gap-3">
+                                className="hidden md:visible min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full md:flex items-center justify-center gap-3">
                                 <FileCode size={20} className="text-amber-600 dark:text-amber-400"/>
                                 <span>Syntax Highlighter</span>
                             </div>
