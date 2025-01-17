@@ -64,9 +64,8 @@ export default function HeroSection() {
                     <AnimatedTitle/>
                 </h1>
 
-                <p className="text-lg md:text-xl text-center text-gray-600 dark:text-gray-300 text-wrap max-w-3xl">
-                    Transform README files into interactive technical documentation with built-in support for diagrams,
-                    code, and custom styling
+                <p className="text-[16px] md:text-2xl text-center text-gray-600 dark:text-gray-300 text-wrap max-w-3xl">
+                    Transform boring Markdown README files into Technical Blog, Product Documentation or Personal Notes.
                 </p>
 
                 <div className="flex flex-col gap-8 lg:gap-10 max-w-4xl w-full">
