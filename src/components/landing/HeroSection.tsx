@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import {ArrowRight, Camera, FileCode, Laptop, Sparkles} from 'lucide-react';
+import {ArrowRight, Camera, FileCode, Code2, GitBranch, ImageIcon} from 'lucide-react';
 import { TypingDemo } from '@/components/landing/auto-demo/TypingDemo';
 import { FaGithub } from "react-icons/fa";
 import QuickSearch from "@/components/QuickSearch";
@@ -39,6 +39,13 @@ export default function HeroSection() {
         }
     };
 
+    const scrollToDemo = () => {
+        const demoElement = document.getElementById('auto-demo-section');
+        if (demoElement) {
+            demoElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="
             flex
@@ -52,60 +59,87 @@ export default function HeroSection() {
                 <QuickSearch/>
             </div>
 
-            <div className="flex-1 flex flex-col my-auto items-center space-y-10 py-10 w-full">
-
-                <h1 className=" font-bold text-center text-wrap"> {/* Add responsive text and word breaking */}
+            <div className="flex-1 flex flex-col my-auto items-center space-y-6 pt-5 w-full md:space-y-10 lg:space-y-16">
+                <h1 className="font-bold text-center text-wrap">
                     <AnimatedTitle/>
                 </h1>
 
-                <p className="text-lg md:text-xl text-center text-gray-600 dark:text-gray-300 text-wrap"> {/* Remove mx-auto since parent is centered */}
-                    Transform your boring README files into stunning pages that capture attention
+                <p className="text-lg md:text-xl text-center text-gray-600 dark:text-gray-300 text-wrap max-w-3xl">
+                    Transform README files into interactive technical documentation with built-in support for diagrams,
+                    code, and custom styling
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                    {/* Each box now has justify-center to center its contents */}
-                    <div
-                        className="md:basis-[calc(33%-1rem)] min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-4 py-2 rounded-full flex items-center justify-center gap-2  whitespace-nowrap">
-                        <FaGithub size={20} className="text-amber-600 dark:text-amber-400"/>
-                        <span>Instant Conversion</span>
+                <div className="flex flex-col gap-8 lg:gap-10 max-w-4xl w-full">
+                    {/* Creation & Conversion Features */}
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-amber-800 dark:text-amber-400 text-center">Markdown with Extra Features</h3>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <div
+                                className="min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full flex items-center justify-center gap-3">
+                                <FaGithub size={20} className="text-amber-600 dark:text-amber-400"/>
+                                <span>Instant Conversion</span>
+                            </div>
+
+                            <div
+                                className="min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full flex items-center justify-center gap-3">
+                                <GitBranch size={20} className="text-amber-600 dark:text-amber-400"/>
+                                <span>Render Mermaid.js</span>
+                            </div>
+
+                            <div
+                                className="min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full flex items-center justify-center gap-3">
+                                <ImageIcon size={20} className="text-amber-600 dark:text-amber-400"/>
+                                <span>Render SVG</span>
+                            </div>
+
+                            <div
+                                className="hidden lg:visible min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full lg:flex items-center justify-center gap-3">
+                                <Code2 size={20} className="text-amber-600 dark:text-amber-400"/>
+                                <span>Render inline-HTML & CSS</span>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Hidden on mobile, visible on desktop */}
-                    <div
-                        className="hidden md:flex md:basis-[calc(33%-1rem)] min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-4 py-2 rounded-full items-center justify-center gap-2  whitespace-nowrap">
-                        <Laptop size={20} className="text-amber-600 dark:text-amber-400"/>
-                        <span>Responsive Design</span>
-                    </div>
+                    {/* Content & Sharing Features */}
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-amber-800 dark:text-amber-400 text-center">Code
+                            Sharing</h3>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <div
+                                className="min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full flex items-center justify-center gap-3">
+                                <FileCode size={20} className="text-amber-600 dark:text-amber-400"/>
+                                <span>Code Copy</span>
+                            </div>
 
-                    {/* Hidden on mobile, visible on desktop */}
-                    <div
-                        className="hidden md:flex md:basis-[calc(33%-1rem)] min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-4 py-2 rounded-full items-center justify-center gap-2 whitespace-nowrap">
-                        <FileCode size={20} className="text-amber-600 dark:text-amber-400"/>
-                        <span>Code Export</span>
-                    </div>
-
-                    <div
-                        className="md:basis-[calc(33%-1rem)] min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-4 py-2 rounded-full flex items-center justify-center gap-2 whitespace-nowrap">
-                        <Camera size={20} className="text-amber-600 dark:text-amber-400"/>
-                        <span>Code Screenshot</span>
-                    </div>
-
-                    <div
-                        className="md:basis-[calc(33%-1rem)] min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm px-4 py-2 rounded-full flex items-center justify-center gap-2 shadow-lg whitespace-nowrap">
-                        <Sparkles size={20} className="text-amber-600 dark:text-amber-400"/>
-                        <span>Smart Theme</span>
+                            <div
+                                className="min-w-fit bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg px-3 py-2.5 rounded-full flex items-center justify-center gap-3">
+                                <Camera size={20} className="text-amber-600 dark:text-amber-400"/>
+                                <span>Code Screenshot</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+
                 <TypingDemo/>
 
-                <button
-                    onClick={scrollToGithubForm}
-                    className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto transform transition-transform hover:scale-105"
-                >
-                    Get Started
-                    <ArrowRight size={20}/>
-                </button>
+                <div className="flex flex-wrap gap-4 justify-center">
+                    <button
+                        onClick={scrollToGithubForm}
+                        className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-3 rounded-lg flex items-center gap-2 transform transition-transform hover:scale-105"
+                    >
+                        Get Started
+                        <ArrowRight size={20}/>
+                    </button>
+
+                    <button
+                        onClick={scrollToDemo}
+                        className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-3 rounded-lg flex items-center gap-2 transform transition-transform hover:scale-105"
+                    >
+                        See Examples
+                        <ArrowRight size={20}/>
+                    </button>
+                </div>
             </div>
         </div>
     );
