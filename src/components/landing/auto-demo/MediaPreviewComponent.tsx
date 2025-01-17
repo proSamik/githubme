@@ -30,7 +30,16 @@ export const MediaPreviewComponent: React.FC<PreviewProps> = ({ isEditing, isMob
 <h1>Media Example</h1>
 
 <h2>Static Image Example</h2>
-<img src="/logo-crop.png" width="250" height="250" alt="GitHubMe Logo" style="background: black; padding: 10px"/>
+<img 
+  src="/logo-crop.png" 
+  alt="GitHubMe Logo" 
+  style="
+    background: black; 
+    padding: 10px;
+    max-width: 250px;
+    height: auto;
+  "
+/>
 
 <h2>SVG Example</h2>
 <svg width="200" height="200">
