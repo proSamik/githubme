@@ -46,15 +46,13 @@ export default function HeroSection() {
             items-center
             w-full
             max-w-screen-lg
-            mx-auto
-            px-4
             mb-2
         ">
             <div className="pt-1 mt-4 mb-2">
                 <QuickSearch/>
             </div>
 
-            <div className="flex-1 flex flex-col my-auto items-center space-y-10 py-10 px-4 w-full">
+            <div className="flex-1 flex flex-col my-auto items-center space-y-10 py-10 w-full">
 
                 <h1 className=" font-bold text-center text-wrap"> {/* Add responsive text and word breaking */}
                     <AnimatedTitle/>
