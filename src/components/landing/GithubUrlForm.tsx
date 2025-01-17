@@ -5,7 +5,7 @@ import { FileCode } from 'lucide-react';
 
 export function GithubUrlForm() {
     return (
-        <div className="w-full max-w-screen-lg mx-auto px-4">
+        <div className="w-full max-w-screen-lg px-4">
             {/* Main container with gradient background */}
             <div className="flex flex-col items-center space-y-8">
                 {/* Title section */}
