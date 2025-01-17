@@ -12,11 +12,11 @@ export function LandingPage({ error }: LandingPageProps) {
 
     return (
         <div className="flex flex-col items-center px-4 pb-4">
-            <div className="pt-4 md:min-h-screen" id="hero-section">
+            <div className="pt-4 " id="hero-section">
                 <HeroSection />
             </div>
 
-            <div className="max-h-screen mt-10 lg:mt-0 mb-20 md:mb-2" id="auto-demo-section">
+            <div className="max-h-screen mt-10 mb-20 md:mb-5" id="auto-demo-section">
                 <AutoDemoSection />
             </div>
 
