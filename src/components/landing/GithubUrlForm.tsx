@@ -25,7 +25,7 @@ export function GithubUrlForm() {
 
                 {/* Examples section */}
                 <div className="w-full max-w-4xl mx-auto">
-                    <div className="bg-white dark:bg-dark-background shadow-lg rounded-xl p-6 space-y-4">
+                    <div className="bg-white dark:bg-dark-background shadow-lg dark:shadow-amber-100 dark:shadow-sm rounded-xl p-6 space-y-4">
                         <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400">
                             <FileCode size={20} />
                             <h2 className="text-lg font-semibold">Example Formats</h2>
