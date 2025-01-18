@@ -108,7 +108,7 @@ const FeedbackForm = () => {
                                     <div>
                                         <label htmlFor="message"
                                                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                            Message
+                                            Share your thoughts
                                         </label>
                                         <textarea
                                             id="message"
@@ -124,7 +124,7 @@ const FeedbackForm = () => {
                                     <div>
                                         <label htmlFor="email"
                                                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                            Email
+                                            State your email address
                                         </label>
                                         <input
                                             type="email"
@@ -153,7 +153,7 @@ const FeedbackForm = () => {
                                             'Sending...'
                                         ) : (
                                             <>
-                                                Send Feedback
+                                                Send
                                                 <Send size={20}/>
                                             </>
                                         )}
