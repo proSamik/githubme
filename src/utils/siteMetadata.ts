@@ -3,7 +3,7 @@ export const siteMetadata = {
     title: 'GitHubMe - Transform Your Markdown Content',
     defaultTitle: 'GitHubMe',
     creator: 'Samik Choudhury',
-    siteUrl: 'https://githubme.com',
+    siteUrl: 'https://githubme.com/',
     defaultDescription: 'Transform your boring GitHub Markdown README files into amazing Technical Blogs, Product Documentation, or Personal Notes with built-in SEO support.',
     defaultKeywords: ['markdown', 'github', 'documentation', 'blog', 'technical writing', 'mermaid diagrams', 'code formatting'],
     twitterUsername: '@prosamik',
