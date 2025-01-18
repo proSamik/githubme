@@ -4,5 +4,7 @@ export const config = {
     port: process.env.NEXT_PUBLIC_PORT || 10000,
     apiEndpoints: {
         md: '/md',
+        analytics: '/analytics',
+        feedback: '/feedback?site=githubme',
     }
 };
