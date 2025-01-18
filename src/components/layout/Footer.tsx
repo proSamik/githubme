@@ -16,7 +16,7 @@ export default function Footer() {
                                 © {new Date().getFullYear()} GithubMe. All rights reserved.
                             </p>
                             <a
-                                href="/prosamik/githubme/blob/feat-tos-and-seo/terms-of-service.md"
+                                href="/prosamik/githubme/blob/main/terms-of-service.md"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-sm text-amber-800 dark:text-amber-200 underline hover:text-amber-600 dark:hover:text-amber-400 mt-1"
