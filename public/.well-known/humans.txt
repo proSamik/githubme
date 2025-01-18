@@ -1,0 +1,11 @@
+/* TEAM */
+    Creator: Samik Choudhury
+    Contact: dev.samikc@gmail.com
+    Website: https://prosamik.com
+    From: India
+
+/* SITE */
+    Last update: 2025/01/19
+    Language: English
+    Doctype: HTML5
+    IDE: WebStorm, VS Code
