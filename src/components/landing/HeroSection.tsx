@@ -71,8 +71,7 @@ export default function HeroSection() {
                     </p>
 
                     <p className="text-[16px] md:text-2xl text-center text-gray-600 dark:text-gray-300 text-wrap max-w-3xl">
-                        Transform boring Markdown README files into Technical Blog, Product Documentation or Personal
-                        Notes.
+                        Transform boring Markdown README files into Technical Blog, Product Documentation or Personal Notes.
                     </p>
                 </div>
 
