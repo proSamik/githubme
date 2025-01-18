@@ -1,5 +1,5 @@
 // app/[...path]/page.tsx
-import {fetchContent} from "@/lib/api";
+import {fetchContent, trackPageView} from "@/lib/api";
 import { ErrorDisplay } from "@/components/layout/ErrorDisplay";
 import React from "react";
 import Article from "@/components/article/Article";
@@ -13,6 +13,9 @@ interface Props {
 export default async function Page({ params: paramsPromise }: Props) {
     const params = await paramsPromise;
     const { path } = params;
+
+    // Track page view
+    void trackPageView('githubme_markdown');
 
     const [username, repo, ...remainingPath] = path;
 

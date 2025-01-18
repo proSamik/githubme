@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Code, Image, FileText } from 'lucide-react';
+import { Code, Image, FileText, Type } from 'lucide-react';
 import {CodePreviewComponent} from "@/components/landing/auto-demo/CodePreviewComponent";
 import {DiagramsPreviewComponent} from "@/components/landing/auto-demo/DiagramsPreviewComponent";
 import {MediaPreviewComponent} from "@/components/landing/auto-demo/MediaPreviewComponent";
+import {TextContentPreviewComponent} from "@/components/landing/auto-demo/TextContentPreviewComponent";
 
 export function PreviewManager() {
-    const [activeFeature, setActiveFeature] = useState('code');
+    const [activeFeature, setActiveFeature] = useState('text');
     const [isEditing, setIsEditing] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -18,29 +19,35 @@ export function PreviewManager() {
 
     const features = [
         {
+            id: 'text',
+            label: 'Text',
+            icon: Type,
+            component: TextContentPreviewComponent
+        },
+        {
             id: 'code',
             label: 'Code',
             icon: Code,
             component: CodePreviewComponent
         },
         {
-            id: 'diagram',
-            label: 'Diagrams',
-            icon: FileText,
-            component: DiagramsPreviewComponent
-        },
-        {
             id: 'media',
             label: 'Media',
             icon: Image,
             component: MediaPreviewComponent
+        },
+        {
+            id: 'diagram',
+            label: 'Diagrams',
+            icon: FileText,
+            component: DiagramsPreviewComponent
         }
     ];
 
     const ActiveComponent = features.find(f => f.id === activeFeature)?.component;
 
     return (
-        <div className="w-full flex flex-col ">
+        <div className="w-full flex flex-col">
             {/* Feature Toggle */}
             <div className="flex justify-center mb-4 flex-shrink-0">
                 <div className="bg-amber-100 dark:bg-amber-900/50 p-1 rounded-lg inline-flex">

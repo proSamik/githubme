@@ -16,16 +16,7 @@ export const MediaPreviewComponent: React.FC<PreviewProps> = ({ isEditing, isMob
 </svg>
 
 ## GIF Example
-![GIF](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
-
-## Table Example
-| ID | Name | Role | Status | Team | Experience |
-|-----|------|------|--------|------|------------|
-| 1 | John Doe | Developer | Active | Alpha | Senior |
-| 2 | Jane Smith | Designer | Active | Beta | Mid-level |
-| 3 | Bob Wilson | Manager | Away | Gamma | Lead |
-| 4 | Alice Brown | DevOps | Active | Delta | Senior |
-| 5 | Tom Clark | QA | Offline | Epsilon | Junior |`,
+![GIF](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)`,
         html: `
 <h1>Media Example</h1>
 
@@ -48,62 +39,7 @@ export const MediaPreviewComponent: React.FC<PreviewProps> = ({ isEditing, isMob
 
 <h2>GIF Example</h2>
 <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="250" height="250" alt="Cat GIF"/>
-
-<h2>Table Example</h2>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th>Team</th>
-            <th>Experience</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>Developer</td>
-            <td>Active</td>
-            <td>Alpha</td>
-            <td>Senior</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jane Smith</td>
-            <td>Designer</td>
-            <td>Active</td>
-            <td>Beta</td>
-            <td>Mid-level</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Bob Wilson</td>
-            <td>Manager</td>
-            <td>Away</td>
-            <td>Gamma</td>
-            <td>Lead</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Alice Brown</td>
-            <td>DevOps</td>
-            <td>Active</td>
-            <td>Delta</td>
-            <td>Senior</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Tom Clark</td>
-            <td>QA</td>
-            <td>Offline</td>
-            <td>Epsilon</td>
-            <td>Junior</td>
-        </tr>
-    </tbody>
-</table>`
+`
     };
 
     return (

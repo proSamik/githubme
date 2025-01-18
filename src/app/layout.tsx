@@ -1,16 +1,16 @@
 // src/app/layout.tsx
-import { Inter } from 'next/font/google';
-import { ErrorBoundary } from '@/components/layout/ErrorBoundary';
+'use client';
+
+import {Inter} from 'next/font/google';
+import {ErrorBoundary} from '@/components/layout/ErrorBoundary';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import './globals.css';
 import React from "react";
-import { Providers } from './providers';
-const inter = Inter({ subsets: ['latin'] });
+import {Providers} from './providers';
+import FeedbackForm from "@/components/FeedbackForm";
 
-export const metadata = {
-    title: 'GithubMe',
-};
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
                                        children,
@@ -33,6 +33,7 @@ export default function RootLayout({
                 mt-8">
                     {children}
                 </main>
+                <FeedbackForm />
                 <Footer/>
             </ErrorBoundary>
         </Providers>
