@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, FormEvent } from 'react';
 import { MessageSquare, X, Send } from 'lucide-react';
 import { sendFeedback } from '@/lib/api';
@@ -72,7 +74,7 @@ const FeedbackForm = () => {
                             <span className="hidden sm:inline text-xs sm:text-[14px]">|</span>
                             <p className="text-xs sm:text-[14px]">Need to Roast</p>
                             <span className="text-xs sm:text-[14px]">|</span>
-                            <p className="text-xs sm:text-[14px]">Feedback</p>
+                            <p className="text-xs sm:text-[14px]">Suggest Features</p>
                         </div>
                     </div>
                 </div>
@@ -106,7 +108,7 @@ const FeedbackForm = () => {
                                     <div>
                                         <label htmlFor="message"
                                                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                            Message
+                                            Share your thoughts
                                         </label>
                                         <textarea
                                             id="message"
@@ -122,7 +124,7 @@ const FeedbackForm = () => {
                                     <div>
                                         <label htmlFor="email"
                                                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                                            Email
+                                            State your email address
                                         </label>
                                         <input
                                             type="email"
@@ -151,7 +153,7 @@ const FeedbackForm = () => {
                                             'Sending...'
                                         ) : (
                                             <>
-                                                Send Feedback
+                                                Send
                                                 <Send size={20}/>
                                             </>
                                         )}
