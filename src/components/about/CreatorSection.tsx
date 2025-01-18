@@ -17,7 +17,7 @@ export default function CreatorSection() {
                         className="rounded-full shadow-2xl shadow-gray-600 dark:shadow-gray-100 dark:shadow-lg"
                         priority
                     />
-                    <h2 className="text-2xl mb-2">Hey, I'm Samik</h2>
+                    <h2 className="text-2xl mb-2">Hey, I&apos;m Samik</h2>
                 </div>
 
                 <div className="text-center space-y-4 dark:animate-pulse">
@@ -85,4 +85,3 @@ export default function CreatorSection() {
         </div>
     );
 }
-
