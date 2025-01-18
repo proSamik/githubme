@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, FormEvent } from 'react';
 import { MessageSquare, X, Send } from 'lucide-react';
 import { sendFeedback } from '@/lib/api';
@@ -72,7 +74,7 @@ const FeedbackForm = () => {
                             <span className="hidden sm:inline text-xs sm:text-[14px]">|</span>
                             <p className="text-xs sm:text-[14px]">Need to Roast</p>
                             <span className="text-xs sm:text-[14px]">|</span>
-                            <p className="text-xs sm:text-[14px]">Feedback</p>
+                            <p className="text-xs sm:text-[14px]">Suggest Features</p>
                         </div>
                     </div>
                 </div>
