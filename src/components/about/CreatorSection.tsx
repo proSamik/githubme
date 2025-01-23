@@ -3,6 +3,38 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import BlogList from '../blog/BlogList';
+
+// Sample blog posts data - you can replace this with actual data from your source
+const samplePosts = [
+    {
+        id: '1',
+        title: 'Building Modern DevOps Pipelines',
+        slug: 'modern-devops-pipelines',
+        description: 'Learn how to create efficient CI/CD pipelines using modern DevOps tools and practices.',
+        date: '2025-01-21',
+        readTime: 8,
+        tags: ['DevOps', 'CI/CD', 'Automation']
+    },
+    {
+        id: '2',
+        title: 'Golang Best Practices',
+        slug: 'golang-best-practices',
+        description: 'Essential patterns and practices for writing maintainable Go code in production.',
+        date: '2025-01-18',
+        readTime: 10,
+        tags: ['Golang', 'Backend', 'Programming']
+    },
+    {
+        id: '3',
+        title: 'React Performance Tips',
+        slug: 'react-performance-tips',
+        description: 'Advanced techniques for optimizing React applications for better performance.',
+        date: '2025-01-15',
+        readTime: 6,
+        tags: ['React', 'JavaScript', 'Frontend']
+    }
+];
 
 export default function CreatorSection() {
     return (
@@ -74,7 +106,7 @@ export default function CreatorSection() {
                 </div>
             </div>
 
-            <div className="text-center mt-2">
+            <div className="text-center mt-2 mb-12">
                 <Link
                     href="https://prosamik.com/about"
                     className="inline-block px-8 py-3 bg-amber-500 dark:bg-amber-700 text-white rounded-lg hover:bg-amber-600 dark:hover:bg-amber-600 transition-colors"
@@ -82,6 +114,9 @@ export default function CreatorSection() {
                     See my timeline here
                 </Link>
             </div>
+
+            {/* Blog List Section */}
+            <BlogList posts={samplePosts} className="mt-8" />
         </div>
     );
 }
