@@ -87,7 +87,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-    void trackPageView('githubme_about');
+    await trackPageView('githubme_about');
 
     return (
         <main className="flex min-h-screen flex-col items-center px-4">

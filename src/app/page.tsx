@@ -70,7 +70,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Page() {
 
-    void trackPageView('githubme_home');
+    await trackPageView('githubme_home');
 
     return (
         <>
