@@ -2,6 +2,7 @@
 import { LandingPage } from '@/components/landing/LandingPage';
 import React from "react";
 import { Metadata } from 'next';
+import {trackPageView} from "@/lib/api";
 
 const siteMetadata = {
     title: 'GitHubMe',
@@ -67,7 +68,10 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default function Page() {
+export default async function Page() {
+
+    void trackPageView('githubme_home');
+
     return (
         <>
             <LandingPage />
