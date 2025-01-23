@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     }
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
     void trackPageView('githubme_about');
 
     return (
