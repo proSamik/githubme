@@ -1,4 +1,6 @@
 // app/page.tsx
+export const dynamic = 'force-dynamic';
+
 import { LandingPage } from '@/components/landing/LandingPage';
 import React from "react";
 import { Metadata } from 'next';
