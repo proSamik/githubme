@@ -3,7 +3,7 @@
 import React from 'react';
 import {PreviewManager} from "@/components/landing/auto-demo/PreviewManager";
 
-export function AutoDemoSection() {
+const AutoDemoSection: React.FC = () => {
     return (
         <div className="w-full flex flex-col items-center space-y-12 max-h-screen">
             <div className="w-full max-w-5xl">
@@ -12,3 +12,5 @@ export function AutoDemoSection() {
         </div>
     );
 }
+
+export default AutoDemoSection;
