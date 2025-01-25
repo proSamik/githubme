@@ -71,6 +71,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
         <body
+            suppressHydrationWarning
             className={`${inter.className} bg-white dark:bg-dark-background text-zinc-900 dark:text-white transition-colors min-h-screen flex flex-col`}>
         <Providers>
             <ErrorBoundary>
