@@ -30,6 +30,12 @@ export default function manifest(): MetadataRoute.Manifest {
                 src: '/logo.png',
                 sizes: '512x512',
                 type: 'image/png'
+            },
+            {
+                src: '/logo.png',
+                sizes: '512x512',
+                type: 'image/png',
+                purpose: 'maskable'
             }
         ],
         orientation: 'portrait',
