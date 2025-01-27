@@ -3,7 +3,7 @@ import React from 'react';
 import QuickSearch from "@/components/QuickSearch";
 import {CiGlobe} from "react-icons/ci";
 
-export function GithubUrlForm() {
+const GithubUrlForm: React.FC = () => {
     return (
         <div className="w-full max-w-screen-lg px-4">
             {/* Main container with gradient background */}
@@ -78,3 +78,5 @@ export function GithubUrlForm() {
         </div>
     );
 }
+
+export default GithubUrlForm;

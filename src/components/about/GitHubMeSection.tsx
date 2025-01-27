@@ -72,6 +72,23 @@ export default function GitHubMeSection() {
                 </div>
             </div>
 
+            {/* Disclaimer Section */}
+            <div className="w-full max-w-4xl">
+                <div className="
+                    bg-white dark:bg-dark-background
+                    shadow-lg dark:shadow-amber-200 dark:shadow-sm
+                    px-8 py-6 rounded-lg
+                ">
+                    <h2 className="text-2xl font-semibold text-amber-800 dark:text-amber-400 mb-4 text-center">
+                        Disclaimer
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-300 text-center">
+                        This project provides enhanced presentation and functionality for publicly available markdown content using the GitHub API. 
+                        This service is not affiliated with, endorsed by, or associated with GitHub, Inc. and github.com.
+                    </p>
+                </div>
+            </div>
+
             {/* Features Grid */}
             <FeatureGrid />
 

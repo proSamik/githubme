@@ -1,5 +1,6 @@
 import { config } from '@/config/api';
 import { BackendResponse } from '@/types';
+import { getCachedData } from '@/utils/cache/nodeCache';
 
 interface FeedbackRequest {
     email: string;
@@ -12,13 +13,17 @@ interface FeedbackResponse {
 }
 
 export async function fetchContent(url: string): Promise<BackendResponse> {
-    const response = await fetch(`${config.baseUrl}${config.apiEndpoints.md}?url=${encodeURIComponent(url)}`);
-
-    if (!response.ok) {
-        throw new Error('Failed to fetch content');
-    }
-
-    return response.json();
+    const cacheKey = `content-${url}`;
+    
+    return getCachedData(cacheKey, async () => {
+        const response = await fetch(`${config.baseUrl}${config.apiEndpoints.md}?url=${encodeURIComponent(url)}`);
+        
+        if (!response.ok) {
+            throw new Error('Failed to fetch content');
+        }
+        
+        return response.json();
+    });
 }
 
 export async function trackPageView(pageName: string): Promise<void> {

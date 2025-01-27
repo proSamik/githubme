@@ -42,6 +42,28 @@ const nextConfig: NextConfig = {
         dangerouslyAllowSVG: true,
         contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     },
+    async headers() {
+        return [
+            {
+                source: '/:all*(svg|jpg|png)',
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=31536000, immutable'
+                    }
+                ]
+            },
+            {
+                source: '/manifest.webmanifest',
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=3600'
+                    }
+                ]
+            }
+        ];
+    },
     experimental: {
         isrFlushToDisk: false, // Disable ISR flushing during development
     },
