@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaTwitter } from 'react-icons/fa';
 import BlogList from '../blog/BlogList';
 
 // Sample blog posts data - you can replace this with actual data from your source
@@ -93,14 +93,14 @@ export default function CreatorSection() {
                             >
                                 <FaGithub size={30} />
                             </a>
-                            <a
+                            {/* <a
                                 href="https://www.linkedin.com/in/prosamik"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-blue-600 flex flex-col items-center"
                             >
                                 <FaLinkedin size={30} />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </div>

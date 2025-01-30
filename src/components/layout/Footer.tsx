@@ -1,5 +1,5 @@
 // src/components/Footer.tsx
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -26,7 +26,7 @@ export default function Footer() {
                     </div>
 
                     <div className="flex space-x-6">
-                        <a
+                        {/* <a
                             href="https://www.linkedin.com/in/prosamik"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -37,7 +37,7 @@ export default function Footer() {
                                 <span className="mt-1 text-xs">
                                     proSamik
                                 </span>
-                            </a>
+                            </a> */}
                             <a
                                 href="https://www.twitter.com/prosamik"
                                 target="_blank"
