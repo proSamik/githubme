@@ -31,7 +31,7 @@ export default function ArticleFooter({ metadata }: Props) {
                 </span>
 
                 <a
-                    href={`https://github.com/${metadata.repository}`}
+                    href={`https://github.com/${metadata.author}/${metadata.repository}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-amber-50 dark:bg-amber-900/10
