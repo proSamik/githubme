@@ -36,7 +36,7 @@ const BlogList: React.FC<BlogListProps> = ({ posts, className = '' }) => {
                     {posts.map((post) => (
                         <Link 
                             key={post.id}
-                            href={`/blog/${post.slug}`}
+                            href={`/${post.slug}`}
                             className="group relative flex flex-col p-6 bg-white dark:bg-dark-background dark:shadow-amber-200 dark:shadow-sm shadow-lg rounded-lg hover:shadow-xl transition-all duration-200"
                         >
                             <article className="flex flex-col flex-1">

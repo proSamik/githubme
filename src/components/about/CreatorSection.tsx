@@ -3,36 +3,73 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
-import BlogList from '../blog/BlogList';
+import BlogList from '@/components/about/BlogList';
 
 // Sample blog posts data - you can replace this with actual data from your source
 const samplePosts = [
     {
-        id: '1',
-        title: 'Building Modern DevOps Pipelines',
-        slug: 'modern-devops-pipelines',
-        description: 'Learn how to create efficient CI/CD pipelines using modern DevOps tools and practices.',
-        date: '2025-01-21',
-        readTime: 8,
-        tags: ['DevOps', 'CI/CD', 'Automation']
+        id: '2',
+        title: 'Best Practices for Project Details',
+        slug: 'proSamik/README-template/blob/main/BLOGS/Best-practices-for-project-details.md',
+        description: 'A guide to help recruiters and contributors understand your project architecture and quality.',
+        readTime: 10,
+        tags: ['Readme', 'Markdown', 'Project']
     },
     {
-        id: '2',
-        title: 'Golang Best Practices',
-        slug: 'golang-best-practices',
-        description: 'Essential patterns and practices for writing maintainable Go code in production.',
-        date: '2025-01-18',
-        readTime: 10,
-        tags: ['Golang', 'Backend', 'Programming']
+        id: '1',
+        title: 'Best Practices for Project Readme',
+        slug: 'proSamik/Blog-notes/blob/main/Best-Practices-for-project-readme.md',
+        description: 'A guide to creating effective project READMEs that engage users and contributors.',
+        readTime: 8,
+        tags: ['Readme', 'Markdown', 'GitHub']
     },
     {
         id: '3',
-        title: 'React Performance Tips',
-        slug: 'react-performance-tips',
-        description: 'Advanced techniques for optimizing React applications for better performance.',
-        date: '2025-01-15',
-        readTime: 6,
-        tags: ['React', 'JavaScript', 'Frontend']
+        title: 'The Deployment Blueprint',
+        slug: 'proSamik/README-template/blob/main/BLOGS/Deployment-Essentials.md',
+        description: 'A guide for developers to master modern deployment strategies and build resilient systems.',
+        readTime: 12,
+        tags: ['Docker', 'Container', 'Deployment', 'CI/CD', 'Monitoring']
+    },
+    {
+        id: '4',
+        title: 'VPS Mastery: From Bare Metal to CI/CD Automation in 16 Steps',
+        slug: 'proSamik/README-template/blob/main/BLOGS/Basics-of-VPS.md',
+        description: 'Transform a raw virtual server into a production-ready powerhouse with Docker, Nginx, and GitHub Actions.',
+        readTime: 15,
+        tags: ['VPS', 'Docker', 'Nginx', 'CI/CD', 'Automation', 'Monitoring']
+    },
+    {
+        id: '5',
+        title: 'The Only Terminal Guide you need',
+        slug: 'proSamik/README-template/blob/main/BLOGS/Revamp-Terminal-Complete-Guide.md',
+        description: 'Read the Complete Guide on iTerm2, Tmux and Zsh- the only terminal configuration you will ever need',
+        readTime: 10,
+        tags: ['tmux', 'zsh', 'iterm', 'terminal', 'vps']
+    },
+    {
+        id: '6',
+        title: 'Tmux mystery solved',
+        slug: 'proSamik/README-template/blob/main/BLOGS/Tmux-setup.md',
+        description: 'The only blog post you need to configure your Tmux to Chad level and know all the beginner-friendly commands to get started.',
+        readTime: 5,
+        tags: ['tmux', 'terminal', 'vps']
+    },
+    {
+        id: '7',
+        title: 'Production-Ready VPS Setup: A Practical Checklist',
+        slug: 'proSamik/README-template/blob/main/BLOGS/VPS-Checklist.md',
+        description: 'A straightforward guide to essential requirements for deploying a secure and maintainable VPS, covering domain setup, SSH hardening, firewall rules, TLS automation, monitoring, and zero-downtime deployments.',
+        readTime: 10,
+        tags: ['vps', 'ssh', 'monitoring', 'logging', 'deployment']
+    },
+    {
+        id: '8',
+        title: 'Railway.com Deployment Guide: From Zero to Deployed in Minutes',
+        slug: 'proSamik/README-template/blob/main/BLOGS/Railway-Deployment-Guide.md',
+        description: 'Unlock effortless app deployment with Railway.com—simple, cost-effective, and tailored for developers at any level.',
+        readTime: 7,
+        tags: ['deployment', 'beginner', 'railway', 'vps']
     }
 ];
 

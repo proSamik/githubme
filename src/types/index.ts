@@ -1,3 +1,4 @@
+// src/types/index.ts
 export interface BackendResponse {
     content: string;  // HTML string
     metadata: {
