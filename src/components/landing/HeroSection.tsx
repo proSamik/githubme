@@ -67,11 +67,11 @@ export default function HeroSection() {
 
                 <div className="flex flex-col space-y-2 lg:space-y-4">
                     <p className="text-[16px] md:text-2xl font-bold text-center text-amber-600 dark:text-gray-300 text-wrap max-w-3xl">
-                        One Stop Place for Markdown Content
+                        Transform markdown files into a Landing page
                     </p>
 
                     <p className="text-[16px] md:text-2xl text-center text-gray-600 dark:text-gray-300 text-wrap max-w-3xl">
-                        Transform boring Markdown README files into Technical Blog, Product Documentation or Personal Notes.
+                        Markdown files which support YouTube video, GIF, and SVG rendering directly in the landing page.
                     </p>
                 </div>
 
